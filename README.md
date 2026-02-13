@@ -12,7 +12,7 @@ Opspect brings Intelligent Root Cause Isolation that is built on Application Top
 
 ## 🚀  Key Characterics
 
-- No need to setup specific montoring screens and/or alerts
+- No need to setup specific montoring screens or alerts
 - Anomaly Detection & Correlation (App Server - MySQL)
 - UI: App Topology Health
 - UI: Time series graph and heatmap, stats charts
