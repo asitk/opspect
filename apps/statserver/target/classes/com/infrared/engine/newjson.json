@@ -1,0 +1,34 @@
+{
+  "deployment_id" : "dc-01",
+  "customer_id" : "acme",
+  "metrics": [
+    {
+      "name": "cpu.usage_iowait",
+      "tags": [
+        {
+          "name":"host",
+          "values": ["*"]
+        }
+      ]
+    }, {
+      "name": "cpu.usage_user",
+      "tags": [
+        {
+          "name":"host",
+          "values": ["*"]
+        }
+      ]
+    }, {
+      "name": "cpu.usage_system",
+      "tags": [
+        {
+          "name":"host",
+          "values": ["*"]
+        }
+      ]
+    }],
+  "cache_time": 0,
+  "start_absolute": 1467587259459,
+  "end_absolute": 1467956316908
+}
+

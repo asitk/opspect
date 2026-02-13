@@ -1,0 +1,123 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building statserver 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ statserver ---
+[INFO] com.infrared.qengine:statserver:jar:1.0-SNAPSHOT
+[INFO] +- com.google.guava:guava:jar:19.0:compile
+[INFO] +- org.apache.httpcomponents:httpclient:jar:4.5.2:compile
+[INFO] |  +- org.apache.httpcomponents:httpcore:jar:4.4.4:compile
+[INFO] |  +- commons-logging:commons-logging:jar:1.2:compile
+[INFO] |  \- commons-codec:commons-codec:jar:1.9:compile
+[INFO] +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] +- commons-io:commons-io:jar:2.5:compile
+[INFO] +- com.google.code.findbugs:jsr305:jar:2.0.0:compile
+[INFO] +- junit:junit:jar:4.11:test (scope not updated to compile)
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- com.google.code.gson:gson:jar:2.2.4:compile
+[INFO] +- org.eclipse.jetty:jetty-util:jar:9.4.0.M0:compile
+[INFO] +- org.eclipse.jetty:jetty-server:jar:9.4.0.M0:compile
+[INFO] |  +- javax.servlet:javax.servlet-api:jar:3.1.0:compile
+[INFO] |  +- org.eclipse.jetty:jetty-http:jar:9.4.0.M0:compile
+[INFO] |  \- org.eclipse.jetty:jetty-io:jar:9.4.0.M0:compile
+[INFO] +- org.eclipse.jetty:jetty-servlet:jar:9.4.0.M0:compile
+[INFO] |  \- org.eclipse.jetty:jetty-security:jar:9.4.0.M0:compile
+[INFO] +- org.glassfish.jersey.core:jersey-server:jar:2.23.1:compile
+[INFO] |  +- org.glassfish.jersey.core:jersey-common:jar:2.23.1:compile
+[INFO] |  |  +- org.glassfish.jersey.bundles.repackaged:jersey-guava:jar:2.23.1:compile
+[INFO] |  |  \- org.glassfish.hk2:osgi-resource-locator:jar:1.0.1:compile
+[INFO] |  +- org.glassfish.jersey.core:jersey-client:jar:2.23.1:compile
+[INFO] |  +- javax.ws.rs:javax.ws.rs-api:jar:2.0.1:compile
+[INFO] |  +- org.glassfish.jersey.media:jersey-media-jaxb:jar:2.23.1:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.2:compile
+[INFO] |  +- org.glassfish.hk2:hk2-api:jar:2.4.0-b34:compile
+[INFO] |  |  +- org.glassfish.hk2:hk2-utils:jar:2.4.0-b34:compile
+[INFO] |  |  \- org.glassfish.hk2.external:aopalliance-repackaged:jar:2.4.0-b34:compile
+[INFO] |  +- org.glassfish.hk2.external:javax.inject:jar:2.4.0-b34:compile
+[INFO] |  +- org.glassfish.hk2:hk2-locator:jar:2.4.0-b34:compile
+[INFO] |  |  \- org.javassist:javassist:jar:3.18.1-GA:compile
+[INFO] |  \- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] +- org.glassfish.jersey.containers:jersey-container-servlet-core:jar:2.23.1:compile
+[INFO] +- org.glassfish.jersey.containers:jersey-container-jetty-http:jar:2.23.1:compile
+[INFO] |  \- org.eclipse.jetty:jetty-continuation:jar:9.2.14.v20151106:compile
+[INFO] +- org.glassfish.jersey.media:jersey-media-moxy:jar:2.23.1:compile
+[INFO] |  +- org.glassfish.jersey.ext:jersey-entity-filtering:jar:2.23.1:compile
+[INFO] |  \- org.eclipse.persistence:org.eclipse.persistence.moxy:jar:2.6.0:compile
+[INFO] |     +- org.eclipse.persistence:org.eclipse.persistence.core:jar:2.6.0:compile
+[INFO] |     |  \- org.eclipse.persistence:org.eclipse.persistence.asm:jar:2.6.0:compile
+[INFO] |     \- org.glassfish:javax.json:jar:1.0.4:compile
+[INFO] +- org.json:json:jar:20160212:compile
+[INFO] \- org.apache.maven.plugins:maven-javadoc-plugin:jar:2.9.1:compile
+[INFO]    +- org.apache.maven:maven-core:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-file:jar:1.0-beta-6:runtime
+[INFO]    |  +- org.apache.maven:maven-plugin-parameter-documenter:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-http-lightweight:jar:1.0-beta-6:compile
+[INFO]    |  |  \- org.apache.maven.wagon:wagon-http-shared:jar:1.0-beta-6:compile
+[INFO]    |  |     +- nekohtml:xercesMinimal:jar:1.9.6.2:compile
+[INFO]    |  |     \- nekohtml:nekohtml:jar:1.9.6.2:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-http:jar:1.0-beta-6:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-webdav-jackrabbit:jar:1.0-beta-6:runtime
+[INFO]    |  |  +- org.apache.jackrabbit:jackrabbit-webdav:jar:1.5.0:runtime
+[INFO]    |  |  |  +- org.apache.jackrabbit:jackrabbit-jcr-commons:jar:1.5.0:runtime
+[INFO]    |  |  |  \- commons-httpclient:commons-httpclient:jar:3.0:runtime
+[INFO]    |  |  \- org.slf4j:slf4j-nop:jar:1.5.3:runtime
+[INFO]    |  +- org.slf4j:slf4j-jdk14:jar:1.5.6:runtime
+[INFO]    |  |  \- org.slf4j:slf4j-api:jar:1.5.6:runtime
+[INFO]    |  +- org.slf4j:jcl-over-slf4j:jar:1.5.6:runtime
+[INFO]    |  +- org.apache.maven:maven-profile:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven:maven-repository-metadata:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven:maven-error-diagnostics:jar:2.2.1:compile
+[INFO]    |  +- commons-cli:commons-cli:jar:1.2:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-ssh-external:jar:1.0-beta-6:runtime
+[INFO]    |  +- org.apache.maven:maven-plugin-descriptor:jar:2.2.1:compile
+[INFO]    |  +- org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[INFO]    |  +- org.apache.maven:maven-monitor:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven.wagon:wagon-ssh:jar:1.0-beta-6:compile
+[INFO]    |  |  +- com.jcraft:jsch:jar:0.1.38:compile
+[INFO]    |  |  \- org.apache.maven.wagon:wagon-ssh-common:jar:1.0-beta-6:compile
+[INFO]    |  +- classworlds:classworlds:jar:1.1:compile
+[INFO]    |  \- org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[INFO]    |     \- org.sonatype.plexus:plexus-cipher:jar:1.4:compile
+[INFO]    +- org.apache.maven:maven-project:jar:2.2.1:compile
+[INFO]    |  +- org.apache.maven:maven-plugin-registry:jar:2.2.1:compile
+[INFO]    |  \- org.codehaus.plexus:plexus-interpolation:jar:1.11:compile
+[INFO]    +- org.apache.maven:maven-model:jar:2.2.1:compile
+[INFO]    +- org.apache.maven:maven-settings:jar:2.2.1:compile
+[INFO]    +- org.apache.maven:maven-plugin-api:jar:2.2.1:compile
+[INFO]    +- org.apache.maven:maven-artifact:jar:2.2.1:compile
+[INFO]    +- org.apache.maven:maven-artifact-manager:jar:2.2.1:compile
+[INFO]    |  \- backport-util-concurrent:backport-util-concurrent:jar:3.1:compile
+[INFO]    +- org.apache.maven:maven-toolchain:jar:2.2.1:compile
+[INFO]    +- org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile
+[INFO]    +- org.apache.maven:maven-archiver:jar:2.5:compile
+[INFO]    +- org.apache.maven.shared:maven-invoker:jar:2.0.9:compile
+[INFO]    +- org.apache.maven.shared:maven-common-artifact-filters:jar:1.3:compile
+[INFO]    +- org.apache.maven.doxia:doxia-sink-api:jar:1.0:compile
+[INFO]    +- org.apache.maven.doxia:doxia-site-renderer:jar:1.0:compile
+[INFO]    |  +- org.apache.maven.doxia:doxia-core:jar:1.0:compile
+[INFO]    |  +- org.codehaus.plexus:plexus-i18n:jar:1.0-beta-7:compile
+[INFO]    |  +- org.codehaus.plexus:plexus-velocity:jar:1.1.7:compile
+[INFO]    |  +- org.apache.velocity:velocity:jar:1.5:compile
+[INFO]    |  |  \- oro:oro:jar:2.0.8:compile
+[INFO]    |  +- org.apache.maven.doxia:doxia-decoration-model:jar:1.0:compile
+[INFO]    |  +- commons-collections:commons-collections:jar:3.2:compile
+[INFO]    |  +- org.apache.maven.doxia:doxia-module-apt:jar:1.0:compile
+[INFO]    |  +- org.apache.maven.doxia:doxia-module-fml:jar:1.0:compile
+[INFO]    |  +- org.apache.maven.doxia:doxia-module-xdoc:jar:1.0:compile
+[INFO]    |  \- org.apache.maven.doxia:doxia-module-xhtml:jar:1.0:compile
+[INFO]    +- org.apache.maven.wagon:wagon-provider-api:jar:1.0-beta-6:compile
+[INFO]    +- log4j:log4j:jar:1.2.14:compile
+[INFO]    +- com.thoughtworks.qdox:qdox:jar:1.12.1:compile
+[INFO]    +- org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9:compile
+[INFO]    +- org.codehaus.plexus:plexus-archiver:jar:2.1.2:compile
+[INFO]    |  \- org.codehaus.plexus:plexus-io:jar:2.0.4:compile
+[INFO]    \- org.codehaus.plexus:plexus-utils:jar:3.0.5:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.995s
+[INFO] Finished at: Sat Jul 02 23:42:08 IST 2016
+[INFO] Final Memory: 19M/609M
+[INFO] ------------------------------------------------------------------------

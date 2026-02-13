@@ -1,0 +1,20 @@
+commands.txt
+
+:Author: asitk
+:Email: asitk@ak-ubuntu
+:Date: 2016-07-27 03:08
+
+sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-5.5 mysql-client-core-5.5
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo apt-get autoremove
+sudo apt-get autoclean
+apt-get install mysql-server-5.6
+build-run: mvn clean install jetty:run -Djetty.port=7779 -DskipTests=true
+test: mvn clean install verify -Djetty.port=7779
+
+SoapUI
+http://localhost:7779/demo-rest-jersey-spring/podcasts
+
+http://www.tocker.ca/2014/04/21/installing-mysql-5-6-on-ubuntu-14-04-trusty-tahr.html
+https://github.com/Codingpedia/demo-rest-jersey-spring
+

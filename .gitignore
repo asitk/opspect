@@ -1,0 +1,14 @@
+.idea/
+models/kafka/consumer/.idea/
+models/kafka/consumer/consumer.iml
+models/kafka/highconsumer/.idea
+models/kafka/consumer/nb-configuration.xml
+models/kafka/consumer/dependency-reduced-pom.xml
+visual/www/optimize/*
+visual/www/optimize/**
+visual/www/node_modules/
+visual/www/nbproject/private/
+visual/www/nbproject/
+apps/statserver/nbactions.xml
+apps/statserver/nb-configuration.xml
+apps/statserver/dependency-reduced-pom.xml

@@ -1,0 +1,77 @@
+<!-- This fake div hidden preloads our web font! -->
+
+<div class="div-fake-hidden"><i class="fa fa-square-o fa-3x"></i></div>
+
+<div id="nodes" ng-controller="graph_controller as gc" class="app-container"
+     style="width: 100vw; height: 100vh;">
+
+  <div id="graphfixedheader" class="explorefixedheader">
+
+    <div class="realtimetext">Realtime</div>
+    <div id="realtimebutton" class="settings-setter"></div>
+
+    <div class="timelinetext">Timeline</div>
+    <div id="timelinebutton" class="timeline-setter"></div>
+
+    <div id="graphfixedheadertext" class="scope-setter"></div>
+
+  </div>
+
+  <div id="jqxWidget">
+    <div id="jqxLayout"
+         style="padding-top:38px; display:block; overflow:hidden;
+         width:100%">
+
+      <!--documentGroup-->
+      <div id="GraphPanel" style="overflow:hidden" data-container="GraphPanel">
+
+        <div id="graphpanelinner" style="width: 100%; height: 100%;">
+
+          <div id="network" class="vis-network"
+               style="display: block; overflow: hidden;
+         -moz-user-select: none; border: 1px solid #444444;
+         background-color: #222222;">
+          </div>
+
+        </div>
+      </div>
+
+      <div id="CostlyDetailsPanel" data-container="CostlyDetailsPanel">
+
+        <div>&nbsp;</div>
+
+        <div id="costlydetailsinner" style="display:block; padding-left:
+        10px; padding-right:50px; width:100%; height:100%;">
+
+          <table id="costly_requests_grid" class="display" cellspacing="0"
+                 style="width:100%">
+            <thead>
+              <tr>
+                <th>Cluster</th>
+                <th>Request</th>
+                <th>Count</th>
+                <th>TTFB</th>
+                <th>TTLB</th>
+              </tr>
+            </thead>
+
+            <tfoot>
+              <tr>
+                <th>Cluster</th>
+                <th>Request</th>
+                <th>Count</th>
+                <th>TTFB</th>
+                <th>TTLB</th>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      </div>
+
+    </div> <!-- jqxlayout -->
+
+  </div>
+
+  <div id="timeline" class="timeline"></div>
+</div>

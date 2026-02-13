@@ -1,0 +1,203 @@
+<!-- This fake div hidden preloads our web font! -->
+
+<!-- <script
+    src="https://cdn.datatables.net/plug-ins/1.10
+    .12/features/pageResize/dataTables.pageResize.min.js"></script> -->
+<div class="div-fake-hidden"><i class="fa fa-square-o fa-3x"></i></div>
+
+<div id="nodes" ng-controller="explore_controller as ec"
+     class="app-container"
+     style="width: 100vw; height: 100vh;">
+
+  <div id="explorefixedheader" class="explorefixedheader">
+
+    <div class="realtimetext">Realtime</div>
+    <div id="realtimebutton" class="settings-setter"></div>
+
+    <div class="timelinetext">Timeline</div>
+    <div id="timelinebutton" class="timeline-setter"></div>
+
+    <div id="explorefixedheadertext" class="scope-setter"></div>
+
+  </div>
+
+
+  <div style="padding-top: 38px;">
+    <div id="splitter">
+
+      <!--<div data-container="ExplorerPanel"> -->
+      <div id="explorerinner">
+        <div id="jstreeContainer"></div>
+      </div>
+      <!-- </div> -->
+
+      <div>
+        <div id="servicetabs" class="jqx-hideborder jqx-hidescrollbars">
+          <ul>
+            <li style="margin-left: 30px;">Anomalies</li>
+            <!-- <li>s1</li> -->
+          </ul>
+
+          <div id="anomalypanelinner" style="width: 100%; height:100%; padding-right:55px; padding-bottom:20px;">
+
+            <div class="bs-carousel" style="width: 100%; height: 100%;">
+              <div id="anomalycarousel" class="carousel slide"
+                   data-interval="10000" data-ride="carousel"
+                   style="width: 100%; height: 100%;">
+
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#anomalycarousel" data-slide-to="0"
+                      class="active"></li>
+                  <li data-target="#anomalycarousel"
+                      data-slide-to="1"></li>
+                  <li data-target="#anomalycarousel"
+                      data-slide-to="2"></li>
+
+                  <div id="carouselButtons"
+                       style="display:inline-block; padding-left:20px;">
+                    <button id="anomalyplaybutton" type="button"
+                            class="btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-play"></span>
+                    </button>
+                    <button id="anomalypausebutton" type="button"
+                            class="btn btn-default btn-xs">
+                      <span class="glyphicon glyphicon-pause"></span>
+                    </button>
+                  </div>
+
+                </ol>
+
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                  <div class="active item">
+                    <div id="error_overview_c1" style="width: 100%;
+                          height: 100%;"></div>
+                  </div>
+                  <div class="item">
+                    <div id="error_overview_c2" style="width: 100%;
+                          height: 100%;"></div>
+                  </div>
+                  <div class="item">
+                    <div id="error_overview_c3" style="width: 100%;
+                          height: 100%;"></div>
+                  </div>
+                </div>
+
+                <!-- Carousel controls -->
+                <a class="carousel-control left" href="#anomalycarousel"
+                   data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+
+                <a class="carousel-control right" href="#anomalycarousel"
+                   data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+
+              </div>
+            </div>
+          </div> <!-- anomalypanelinner tab 0 -->
+
+
+          <!-- <div id="servicetab1">
+
+            <div id="divleftsection1" class="divleftsectionclass" style="width:30%; height:100%;">
+              <div id="divtop1" class="divtopclass" style="width:100%; height:50%;">
+
+                <table id="topgrid1" class="display compact" cellspacing="0" style="height:100%; width:100%;">
+                  <thead>
+                  <tr>
+                    <th>IPVer</th>
+                    <th>Cluster</th>
+                    <th>Port</th>
+                    <th>Proto</th>
+                    <th>Name</th>
+                    <th>Interface</th>
+                  </tr>
+                  </thead>
+
+                  <tfoot>
+                  <tr>
+                    <th>IPVer</th>
+                    <th>Cluster</th>
+                    <th>Port</th>
+                    <th>Proto</th>
+                    <th>Name</th>
+                    <th>Interface</th>
+                  </tr>
+                  </tfoot>
+                </table>
+
+              </div>
+
+              <div id="divbottom1" class="divbottomclass" style="width:100%; height:50%">
+                <div id='bottompanel1' style="font-size: 13px;font-family:Verdana; float: left; height:100%;width:100%;">
+                  <div style='margin: 10px;'>
+                    <h5>Service Information</h5>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div id="divrightsection1" class="divrightsectionclass" style="width:70%; height:100%;">
+
+              <div id="servicecharttabs" class="jqx-hideborder jqx-hidescrollbars">
+
+                <ul>
+                  <li style="margin-left: 30px;">Severity</li>
+                  <li>Costly Requests</li>
+                  <li>Costly Errors</li>
+                </ul>
+
+                <div id="service_graph" style="width: 100%;height: 100%;"></div>
+                <div id="service_graph" style="width: 100%;height: 100%;"></div>
+                <div id="service_graph" style="width: 100%;height: 100%;"></div>
+
+              </div>
+
+            </div>
+
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="errorlistinner" class="errorlistinner">
+    <table id="grid" class="display compact" cellspacing="0"
+           style="width:100%;">
+      <thead>
+      <tr>
+        <th><input name="select_all" value="1" type="checkbox"></th>
+        <th>Rank</th>
+        <th>Sev</th>
+        <th>Type</th>
+        <th>Major</th>
+        <th>Target</th>
+        <th>Classification</th>
+        <th>Desc</th>
+      </tr>
+      </thead>
+
+      <tfoot>
+      <tr>
+        <th></th>
+        <th>Rank</th>
+        <th>Sev</th>
+        <th>Type</th>
+        <th>Major</th>
+        <th>Target</th>
+        <th>Classification</th>
+        <th>Desc</th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div id="timeline" class="timeline">
+  </div>
+
+</div>

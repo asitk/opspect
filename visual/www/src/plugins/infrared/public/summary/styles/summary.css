@@ -1,0 +1,273 @@
+.div-fake-hidden {
+    width:0px;
+    height:0px;
+    overflow:hidden;
+}
+
+body {
+    font: 12pt verdana;
+}
+
+/* carousel */
+
+.carousel{
+    background: #2a2a2b;            /* matches highcharts background */
+    margin-top: 10px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-carousel{
+    margin: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+}
+
+/* jqxButton */
+.settings-setter
+{
+    float: left;
+    margin-left: 15px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+table.dataTable.select tbody tr,
+table.dataTable thead th:first-child {
+    cursor: pointer;
+}
+
+.datatablebuttonpadding {
+    float:left;
+    width: 1px;
+    padding:8px;
+}
+
+
+div#explorefixedheader {
+    position:fixed;
+    /*top:0px;*/
+    /*left:0px;*/
+    align-content: left;
+    width:100%;
+    color:ghostwhite;
+    font-weight: bold;
+    background:#333;
+    height:38px;
+    padding:6px;
+    z-index:9999;
+}
+
+/* chart viewer */
+
+div#chartviewerfixedheader {
+    position:fixed;
+    top:0px;
+    left:0px;
+    align-content: left;
+    width:100%;
+    height:38px;
+    color:ghostwhite;
+    font-weight: bold;
+    background:#333;
+    padding:8px;
+    z-index:9999;
+}
+
+.floating-box-3 {
+    float:left;
+    width: 32%;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid #606063;
+}
+
+.floating-box-2 {
+    float:left;
+    width: 48%;
+    height: 300px;
+    margin: 13px;
+    border: 2px solid #606063;
+}
+
+.floating-box-1 {
+    float:left;
+    width: 98%;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid #606063;
+}
+
+.clearboth { clear: both; }
+
+body, input {
+
+}
+
+.tree_color_red {
+    color: crimson;
+}
+.tree_color_orange {
+    color: gold;
+}
+.tree_color_green1 {
+    color: greenyellow;
+}
+.tree_color_green2 {
+    color: springgreen;
+}
+.tree_color_default {
+    color: black;
+}
+
+/* custom styles for individual items, load this after vis.css
+   change commonfactory.get_thermal_color when this is updated
+*/
+
+.thermalgreen1 {
+    background-color: greenyellow;
+    border-color: green;
+    color: white;
+}
+.vis-item.green1 {
+    background-color: greenyellow;
+    border-color: green;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+.vis-item.vis-selected.green1 {
+    /* custom colors for selected orange items */
+    background-color: white;
+    border-color: limegreen;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalgreen2 {
+    background-color: springgreen;
+    border-color: green;
+    color: white;
+}
+.vis-item.green2 {
+    background-color: springgreen;
+    border-color: green;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+.vis-item.vis-selected.green2 {
+    /* custom colors for selected orange items */
+    background-color: white;
+    border-color: green;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalred {
+    background-color: crimson;
+    border-color: darkred;
+    color: white;
+}
+.vis-item.red {
+    background-color: crimson;
+    border-color: darkred;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+
+.vis-item.vis-selected.red {
+    /* custom colors for selected orange items */
+    background-color: white;
+    border-color: darkred;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalorange {
+    background-color: gold;
+    border-color: orange;
+    color: white;
+}
+
+.vis-item.orange {
+    background-color: gold;
+    border-color: orange;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+
+.vis-item.vis-selected.orange {
+    /* custom colors for selected orange items */
+    background-color: white;
+    border-color: gold;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalblue {
+    background-color: deepskyblue;
+    border-color: darkblue;
+    color: white;
+}
+
+.vis-item.blue {
+    background-color: deepskyblue;
+    border-color: darkblue;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+.vis-item.vis-selected.blue {
+    background-color: white;
+    border-color: darkblue;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalgrey {
+    background-color: Gainsboro;
+    border-color: dimgray;
+    color: white;
+}
+
+.vis-item.grey {
+    background-color: Gainsboro;
+    border-color: dimgray;
+    color: white;
+    font-family: monospace;
+    box-shadow: 0 0 10px gray;
+}
+.vis-item.vis-selected.grey {
+    background-color: white;
+    border-color: dimgray;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+/* our custom classes overrule the styles for selected events,
+   so lets define a new style for the selected events */
+.vis-item.vis-selected {
+    background-color: white;
+    border-color: black;
+    color: black;
+    box-shadow: 0 0 10px gray;
+}
+
+.thermalwhite {
+    background-color: ghostwhite;
+    border-color: slategrey;
+    color: black;
+}

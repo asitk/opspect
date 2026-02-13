@@ -1,0 +1,24 @@
+# DCO (Developer Certificate of Origin) Configuration
+
+# https://github.com/apps/dco
+
+# This file configures the DCO GitHub App to enforce
+# Developer Certificate of Origin (DCO) signing on all commits.
+
+# Uncomment and configure the following options as needed:
+
+# # Require all commits to be signed
+# required: true
+
+# # Allow maintainers to sign commits on behalf of contributors
+# allowMaintainers: true
+
+# # Allow list of email addresses to be excluded from DCO check
+# allowlist:
+#   - pattern: 'dependabot[bot]@users.noreply.github.com'
+#     username: dependabot
+#   - pattern: 'github-actions[bot]@users.noreply.github.com'
+#     username: github-actions
+
+# # Custom signature (default is "Signed-off-by")
+# signature: "Signed-off-by"
