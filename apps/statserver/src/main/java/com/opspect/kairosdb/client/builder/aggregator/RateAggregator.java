@@ -1,0 +1,36 @@
+package com.opspect.kairosdb.client.builder.aggregator;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.opspect.kairosdb.client.builder.Aggregator;
+import com.opspect.kairosdb.client.builder.TimeUnit;
+
+public class RateAggregator extends Aggregator {
+  private TimeUnit unit;
+
+  public RateAggregator(TimeUnit unit) {
+    super("rate");
+    this.unit = checkNotNull(unit);
+  }
+
+  public TimeUnit getUnit() {
+    return unit;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    if (!super.equals(o)) return false;
+
+    RateAggregator that = (RateAggregator) o;
+    return unit == that.unit;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = super.hashCode();
+    result = 31 * result + unit.hashCode();
+    return result;
+  }
+}
