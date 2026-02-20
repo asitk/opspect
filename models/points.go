@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/infrared/util/escape"
+	"opspect/util/escape"
 )
 
 var (

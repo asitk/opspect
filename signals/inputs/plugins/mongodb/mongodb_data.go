@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type MongodbData struct {

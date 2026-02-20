@@ -1,6 +1,6 @@
 package all
 
 import (
-	_ "bitbucket.org/infrared/signals/outputs/file"
-	_ "bitbucket.org/infrared/signals/outputs/kafka"
+	_ "opspect/signals/outputs/file"
+	_ "opspect/signals/outputs/kafka"
 )

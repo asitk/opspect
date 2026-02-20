@@ -3,10 +3,10 @@ package file
 import (
 	"os"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
-	"bitbucket.org/infrared/models/client"
-	"bitbucket.org/infrared/signals/outputs"
+	"opspect/models/client"
+	"opspect/signals/outputs"
 )
 
 type File struct {

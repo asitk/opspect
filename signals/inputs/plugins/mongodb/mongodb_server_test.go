@@ -1,3 +1,4 @@
+//go:build integration
 // +build integration
 
 package mongodb
@@ -6,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 func TestGetDefaultTags(t *testing.T) {

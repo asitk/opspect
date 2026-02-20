@@ -3,7 +3,7 @@ package puppetagent
 import (
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
+	"opspect/signals/testutil"
 )
 
 func TestGather(t *testing.T) {

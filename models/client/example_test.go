@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"bitbucket.org/infrared/client"
+	"opspect/models/client"
 )
 
 // Create a new client

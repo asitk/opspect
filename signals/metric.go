@@ -3,7 +3,7 @@ package signals
 import (
 	"time"
 
-	"bitbucket.org/infrared/models/client"
+	"opspect/models/client"
 )
 
 type Metric interface {

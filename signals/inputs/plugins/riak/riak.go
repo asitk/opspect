@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 // Type Riak gathers statistics from one or more Riak instances

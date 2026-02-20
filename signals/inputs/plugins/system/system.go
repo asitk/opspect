@@ -5,10 +5,10 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/shirou/gopsutil/host"
-	"github.com/shirou/gopsutil/load"
+	"github.com/shirou/gopsutil/v4/host"
+	"github.com/shirou/gopsutil/v4/load"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type SystemStats struct{}
@@ -31,12 +31,12 @@ func (_ *SystemStats) GatherUnmanagedAsync(shutdown chan struct{}) error {
 }
 
 func (_ *SystemStats) Gather(acc plugins.Accumulator) error {
-	loadavg, err := load.LoadAvg()
+	loadavg, err := load.Avg()
 	if err != nil {
 		return err
 	}
 
-	hostinfo, err := host.HostInfo()
+	hostinfo, err := host.Info()
 	if err != nil {
 		return err
 	}

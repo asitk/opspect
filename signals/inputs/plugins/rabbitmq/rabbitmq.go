@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 const DefaultUsername = "guest"

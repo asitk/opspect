@@ -6,9 +6,9 @@ import (
 	"log"
 	"strconv"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"bitbucket.org/infrared/util/discovery"
-	"github.com/shirou/gopsutil/process"
+	"github.com/shirou/gopsutil/v4/process"
+	"opspect/signals/inputs/plugins"
+	"opspect/util/discovery"
 )
 
 // SpecProcessor ...
@@ -106,7 +106,7 @@ func (p *SpecProcessor) pushCmdLine() error {
 	filename := "/proc/" + strconv.Itoa(int(p.proc.Pid)) + "/cmdline"
 	contents, err := ioutil.ReadFile(filename)
 	if err != nil {
-		log.Fatal("procstat, unable to read stats %s", err.Error())
+		log.Fatalf("procstat, unable to read stats %s", err.Error())
 	}
 	s := string(contents[:len(contents)-1])
 	p.add("cmd", s)
@@ -146,7 +146,7 @@ func (p *SpecProcessor) pushIOStats() error {
 }
 
 func (p *SpecProcessor) pushCPUStats() error {
-	cpu, err := p.proc.CPUTimes()
+	cpu, err := p.proc.Times()
 	if err != nil {
 		return err
 	}
@@ -157,10 +157,9 @@ func (p *SpecProcessor) pushCPUStats() error {
 	p.add("cpu_iowait", cpu.Iowait)
 	p.add("cpu_irq", cpu.Irq)
 	p.add("cpu_soft_irq", cpu.Softirq)
-	p.add("cpu_soft_steal", cpu.Steal)
-	p.add("cpu_soft_stolen", cpu.Stolen)
-	p.add("cpu_soft_guest", cpu.Guest)
-	p.add("cpu_soft_guest_nice", cpu.GuestNice)
+	p.add("cpu_steal", cpu.Steal)
+	p.add("cpu_guest", cpu.Guest)
+	p.add("cpu_guest_nice", cpu.GuestNice)
 	return nil
 }
 

@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 func TestSqlServer_ParseMetrics(t *testing.T) {

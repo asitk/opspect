@@ -3,8 +3,8 @@ package couchbase
 import (
 	"encoding/json"
 
-	"bitbucket.org/infrared/signals/testutil"
 	couchbase "github.com/couchbase/go-couchbase"
+	"opspect/signals/testutil"
 
 	"testing"
 )
@@ -19,8 +19,8 @@ func TestGatherServer(t *testing.T) {
 	if err := json.Unmarshal([]byte(bucketResponse), &bucket); err != nil {
 		t.Fatal("parse bucketResponse", err)
 	}
-	pool.BucketMap = map[string]couchbase.Bucket{
-		bucket.Name: bucket,
+	pool.BucketMap = map[string]*couchbase.Bucket{
+		bucket.Name: &bucket,
 	}
 	var cb Couchbase
 	var acc testutil.Accumulator

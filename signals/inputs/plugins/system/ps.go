@@ -5,15 +5,15 @@ import (
 	"os"
 	"strings"
 
-	"bitbucket.org/infrared/config"
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/config"
+	"opspect/signals/inputs/plugins"
 
 	dc "github.com/fsouza/go-dockerclient"
-	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/disk"
-	"github.com/shirou/gopsutil/docker"
-	"github.com/shirou/gopsutil/mem"
-	"github.com/shirou/gopsutil/net"
+	"github.com/shirou/gopsutil/v4/cpu"
+	"github.com/shirou/gopsutil/v4/disk"
+	"github.com/shirou/gopsutil/v4/docker"
+	"github.com/shirou/gopsutil/v4/mem"
+	"github.com/shirou/gopsutil/v4/net"
 )
 
 type DockerContainerStat struct {
@@ -21,20 +21,20 @@ type DockerContainerStat struct {
 	Name    string
 	Command string
 	Labels  map[string]string
-	CPU     *cpu.CPUTimesStat
+	CPU     *docker.CgroupCPUStat
 	Mem     *docker.CgroupMemStat
 }
 
 type PS interface {
-	CPUTimes(perCPU, totalCPU bool) ([]cpu.CPUTimesStat, error)
-	DiskUsage() ([]*disk.DiskUsageStat, error)
-	NetIO() ([]net.NetIOCountersStat, error)
-	NetProto() ([]net.NetProtoCountersStat, error)
-	DiskIO() (map[string]disk.DiskIOCountersStat, error)
+	CPUTimes(perCPU, totalCPU bool) ([]cpu.TimesStat, error)
+	DiskUsage() ([]*disk.UsageStat, error)
+	NetIO() ([]net.IOCountersStat, error)
+	NetProto() ([]net.ProtoCountersStat, error)
+	DiskIO() (map[string]disk.IOCountersStat, error)
 	VMStat() (*mem.VirtualMemoryStat, error)
 	SwapStat() (*mem.SwapMemoryStat, error)
 	DockerStat() ([]*DockerContainerStat, error)
-	NetConnections() ([]net.NetConnectionStat, error)
+	NetConnections() ([]net.ConnectionStat, error)
 }
 
 func add(acc plugins.Accumulator,
@@ -48,17 +48,17 @@ type systemPS struct {
 	dockerClient *dc.Client
 }
 
-func (s *systemPS) CPUTimes(perCPU, totalCPU bool) ([]cpu.CPUTimesStat, error) {
-	var cpuTimes []cpu.CPUTimesStat
+func (s *systemPS) CPUTimes(perCPU, totalCPU bool) ([]cpu.TimesStat, error) {
+	var cpuTimes []cpu.TimesStat
 	if perCPU {
-		if perCPUTimes, err := cpu.CPUTimes(true); err == nil {
+		if perCPUTimes, err := cpu.Times(true); err == nil {
 			cpuTimes = append(cpuTimes, perCPUTimes...)
 		} else {
 			return nil, err
 		}
 	}
 	if totalCPU {
-		if totalCPUTimes, err := cpu.CPUTimes(false); err == nil {
+		if totalCPUTimes, err := cpu.Times(false); err == nil {
 			cpuTimes = append(cpuTimes, totalCPUTimes...)
 		} else {
 			return nil, err
@@ -67,17 +67,17 @@ func (s *systemPS) CPUTimes(perCPU, totalCPU bool) ([]cpu.CPUTimesStat, error) {
 	return cpuTimes, nil
 }
 
-func (s *systemPS) DiskUsage() ([]*disk.DiskUsageStat, error) {
-	parts, err := disk.DiskPartitions(true)
+func (s *systemPS) DiskUsage() ([]*disk.UsageStat, error) {
+	parts, err := disk.Partitions(true)
 	if err != nil {
 		return nil, err
 	}
 
-	var usage []*disk.DiskUsageStat
+	var usage []*disk.UsageStat
 
 	for _, p := range parts {
 		if _, err := os.Stat(p.Mountpoint); err == nil {
-			du, err := disk.DiskUsage(p.Mountpoint)
+			du, err := disk.Usage(p.Mountpoint)
 			if err != nil {
 				return nil, err
 			}
@@ -89,20 +89,20 @@ func (s *systemPS) DiskUsage() ([]*disk.DiskUsageStat, error) {
 	return usage, nil
 }
 
-func (s *systemPS) NetProto() ([]net.NetProtoCountersStat, error) {
-	return net.NetProtoCounters(nil)
+func (s *systemPS) NetProto() ([]net.ProtoCountersStat, error) {
+	return net.ProtoCounters(nil)
 }
 
-func (s *systemPS) NetIO() ([]net.NetIOCountersStat, error) {
-	return net.NetIOCounters(true)
+func (s *systemPS) NetIO() ([]net.IOCountersStat, error) {
+	return net.IOCounters(true)
 }
 
-func (s *systemPS) NetConnections() ([]net.NetConnectionStat, error) {
-	return net.NetConnections("all")
+func (s *systemPS) NetConnections() ([]net.ConnectionStat, error) {
+	return net.Connections("all")
 }
 
-func (s *systemPS) DiskIO() (map[string]disk.DiskIOCountersStat, error) {
-	m, err := disk.DiskIOCounters()
+func (s *systemPS) DiskIO() (map[string]disk.IOCountersStat, error) {
+	m, err := disk.IOCounters()
 	if err == config.NotImplementedError {
 		return nil, nil
 	}

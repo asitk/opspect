@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"bitbucket.org/infrared/util/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/util/test"
 )
 
 func TestMemcachedGeneratesMetrics(t *testing.T) {

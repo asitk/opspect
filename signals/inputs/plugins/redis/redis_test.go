@@ -2,12 +2,11 @@ package redis
 
 import (
 	"bufio"
-	"fmt"
 	"strings"
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 func TestRedisConnect(t *testing.T) {
@@ -15,7 +14,7 @@ func TestRedisConnect(t *testing.T) {
 		t.Skip("Skipping integration test in short mode")
 	}
 
-	addr := fmt.Sprintf(testutil.GetLocalHost() + ":6379")
+	addr := testutil.GetLocalHost() + ":6379"
 
 	r := &Redis{
 		Servers: []string{addr},

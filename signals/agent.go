@@ -9,16 +9,16 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
 	"strings"
 
-	"bitbucket.org/infrared/config"
-	"bitbucket.org/infrared/models/client"
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"bitbucket.org/infrared/signals/inputs/plugins/kafka"
-	"bitbucket.org/infrared/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
-	"bitbucket.org/infrared/signals/outputs"
+	"opspect/config"
+	"opspect/models/client"
+	"opspect/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins/kafka"
+	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
+	"opspect/signals/outputs"
 )
 
 // Agent collects data based on the given config
@@ -315,10 +315,6 @@ func (a *Agent) gatherUnmanaged(
 			return nil
 		}
 	}
-
-	log.Printf("Debug: *** Finished running Unmanaged Plugins")
-
-	return nil
 }
 
 // Test verifies that we can 'Gather' from all plugins with their configured
@@ -577,7 +573,7 @@ func (a *Agent) Run(shutdown chan struct{}) error {
 			go func(plugin *config.RunningPlugin) {
 				defer wg.Done()
 				if err := a.gatherSeparate(shutdown, plugin, pointChan); err != nil {
-					log.Printf(err.Error())
+					log.Print(err)
 				}
 			}(plugin)
 		}
@@ -589,8 +585,7 @@ func (a *Agent) Run(shutdown chan struct{}) error {
 				defer wg.Done()
 				//if err := a.gatherUnmanaged(shutdown, plugin, pointChanUnmanaged); err != nil {
 				if err := a.gatherUnmanaged(shutdown, plugin, pointChan); err != nil {
-					log.Printf(err.Error())
-					log.Printf(err.Error())
+					log.Print(err)
 				}
 			}(plugin)
 		}
@@ -604,7 +599,7 @@ func (a *Agent) Run(shutdown chan struct{}) error {
 		log.Printf("Plugins Collection, (%s interval), %s", a.Config.Agent.Interval, startts.Format(time.UnixDate))
 
 		if err := a.gatherParallel(pointChan); err != nil {
-			log.Printf(err.Error())
+			log.Print(err)
 		}
 
 		elapsedts := time.Since(startts)

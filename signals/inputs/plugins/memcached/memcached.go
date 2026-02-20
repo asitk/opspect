@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 // Memcached is a memcached plugin

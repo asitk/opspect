@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/infrared/signals/plugins"
-	"bitbucket.org/infrared/signals/plugins/exec"
-	"bitbucket.org/infrared/signals/plugins/memcached"
-	"bitbucket.org/infrared/signals/plugins/procstat"
 	"github.com/stretchr/testify/assert"
+	"opspect/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins/exec"
+	"opspect/signals/inputs/plugins/memcached"
+	"opspect/signals/inputs/plugins/procstat"
 )
 
 /////////////////////////////////////////////////////////////////////
@@ -151,11 +151,11 @@ func TestConfig_LoadDirectory(t *testing.T) {
 		"Testdata did not produce correct memcached metadata.")
 
 	pstat := plugins.Plugins["procstat"]().(*procstat.Procstat)
-	pstat.Specifications = []*procstat.Specification{
-		&procstat.Specification{
+	pstat.Specifications = []procstat.Specification{
+		{
 			PidFile: "/var/run/grafana-server.pid",
 		},
-		&procstat.Specification{
+		{
 			PidFile: "/var/run/influxdb/influxd.pid",
 		},
 	}

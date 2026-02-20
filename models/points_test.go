@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/infrared/models"
+	"opspect/models"
 )
 
 var (

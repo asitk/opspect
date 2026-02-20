@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package system
@@ -5,9 +6,9 @@ package system
 import (
 	"testing"
 
-	"bitbucket.org/infrared/util/test"
-	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/docker"
+	"github.com/shirou/gopsutil/v4/cpu"
+	"github.com/shirou/gopsutil/v4/docker"
+	"opspect/util/test"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -19,18 +20,20 @@ func TestDockerStats_GenerateStats(t *testing.T) {
 
 	ds := &DockerContainerStat{
 		Name: "blah",
-		CPU: &cpu.CPUTimesStat{
-			CPU:       "all",
-			User:      3.1,
-			System:    8.2,
-			Idle:      80.1,
-			Nice:      1.3,
-			Iowait:    0.2,
-			Irq:       0.1,
-			Softirq:   0.11,
-			Steal:     0.0001,
-			Guest:     8.1,
-			GuestNice: 0.324,
+		CPU: &docker.CgroupCPUStat{
+			TimesStat: cpu.TimesStat{
+				CPU:       "all",
+				User:      3.1,
+				System:    8.2,
+				Idle:      80.1,
+				Nice:      1.3,
+				Iowait:    0.2,
+				Irq:       0.1,
+				Softirq:   0.11,
+				Steal:     0.0001,
+				Guest:     8.1,
+				GuestNice: 0.324,
+			},
 		},
 		Mem: &docker.CgroupMemStat{
 			ContainerID:             "blah",

@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 func TestRiak(t *testing.T) {

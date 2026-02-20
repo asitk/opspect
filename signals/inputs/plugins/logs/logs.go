@@ -4,9 +4,9 @@ package logs
 import (
 	"sync"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	log "github.com/Sirupsen/logrus"
 	"github.com/hpcloud/tail"
+	log "github.com/sirupsen/logrus"
+	"opspect/signals/inputs/plugins"
 )
 
 // Logfile ...

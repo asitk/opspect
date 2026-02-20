@@ -8,8 +8,8 @@ import (
 	"sort"
 	"strings"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	"github.com/lib/pq"
+	"opspect/signals/inputs/plugins"
 )
 
 type Postgresql struct {

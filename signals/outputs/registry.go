@@ -1,7 +1,7 @@
 package outputs
 
 import (
-	"bitbucket.org/infrared/models/client"
+	"opspect/models/client"
 )
 
 type Output interface {

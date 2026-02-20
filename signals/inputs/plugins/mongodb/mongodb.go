@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	"gopkg.in/mgo.v2"
+	"opspect/signals/inputs/plugins"
 )
 
 type MongoDB struct {

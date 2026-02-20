@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type Nginx struct {

@@ -3,67 +3,67 @@ package system
 import (
 	"github.com/stretchr/testify/mock"
 
-	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/disk"
+	"github.com/shirou/gopsutil/v4/cpu"
+	"github.com/shirou/gopsutil/v4/disk"
 
-	"github.com/shirou/gopsutil/load"
-	"github.com/shirou/gopsutil/mem"
-	"github.com/shirou/gopsutil/net"
+	"github.com/shirou/gopsutil/v4/load"
+	"github.com/shirou/gopsutil/v4/mem"
+	"github.com/shirou/gopsutil/v4/net"
 )
 
 type MockPS struct {
 	mock.Mock
 }
 
-func (m *MockPS) LoadAvg() (*load.LoadAvgStat, error) {
+func (m *MockPS) LoadAvg() (*load.AvgStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).(*load.LoadAvgStat)
+	r0 := ret.Get(0).(*load.AvgStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
 }
 
-func (m *MockPS) CPUTimes(perCPU, totalCPU bool) ([]cpu.CPUTimesStat, error) {
+func (m *MockPS) CPUTimes(perCPU, totalCPU bool) ([]cpu.TimesStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).([]cpu.CPUTimesStat)
+	r0 := ret.Get(0).([]cpu.TimesStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
 }
 
-func (m *MockPS) DiskUsage() ([]*disk.DiskUsageStat, error) {
+func (m *MockPS) DiskUsage() ([]*disk.UsageStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).([]*disk.DiskUsageStat)
+	r0 := ret.Get(0).([]*disk.UsageStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
 }
 
-func (m *MockPS) NetIO() ([]net.NetIOCountersStat, error) {
+func (m *MockPS) NetIO() ([]net.IOCountersStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).([]net.NetIOCountersStat)
+	r0 := ret.Get(0).([]net.IOCountersStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
 }
 
-func (m *MockPS) NetProto() ([]net.NetProtoCountersStat, error) {
+func (m *MockPS) NetProto() ([]net.ProtoCountersStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).([]net.NetProtoCountersStat)
+	r0 := ret.Get(0).([]net.ProtoCountersStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
 }
 
-func (m *MockPS) DiskIO() (map[string]disk.DiskIOCountersStat, error) {
+func (m *MockPS) DiskIO() (map[string]disk.IOCountersStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).(map[string]disk.DiskIOCountersStat)
+	r0 := ret.Get(0).(map[string]disk.IOCountersStat)
 	r1 := ret.Error(1)
 
 	return r0, r1
@@ -96,10 +96,10 @@ func (m *MockPS) DockerStat() ([]*DockerContainerStat, error) {
 	return r0, r1
 }
 
-func (m *MockPS) NetConnections() ([]net.NetConnectionStat, error) {
+func (m *MockPS) NetConnections() ([]net.ConnectionStat, error) {
 	ret := m.Called()
 
-	r0 := ret.Get(0).([]net.NetConnectionStat)
+	r0 := ret.Get(0).([]net.ConnectionStat)
 	r1 := ret.Error(1)
 
 	return r0, r1

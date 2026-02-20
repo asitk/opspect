@@ -4,7 +4,7 @@ package file
 // import (
 // 	"testing"
 //
-// 	"bitbucket.org/infrared/util/test"
+// 	"opspect/util/test"
 // 	"github.com/stretchr/testify/require"
 // )
 //

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
+	"opspect/signals/testutil"
 
 	"net/http"
 	"net/http/httptest"
@@ -148,8 +148,8 @@ func TestHaproxyGeneratesMetricsWithoutAuthentication(t *testing.T) {
 	acc.AssertContainsTaggedFields(t, "haproxy", fields, tags)
 }
 
-//When not passing server config, we default to localhost
-//We just want to make sure we did request stat from localhost
+// When not passing server config, we default to localhost
+// We just want to make sure we did request stat from localhost
 func TestHaproxyDefaultGetFromLocalhost(t *testing.T) {
 	r := &haproxy{}
 

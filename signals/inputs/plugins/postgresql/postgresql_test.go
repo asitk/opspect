@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 func TestPostgresqlGeneratesMetrics(t *testing.T) {

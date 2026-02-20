@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 // Zookeeper is a zookeeper plugin

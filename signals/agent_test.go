@@ -6,12 +6,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"bitbucket.org/infrared/config"
+	"opspect/config"
 
 	// needing to load the plugins
-	_ "bitbucket.org/infrared/signals/inputs/plugins/all"
+	_ "opspect/signals/inputs/plugins/all"
 	// needing to load the outputs
-	_ "bitbucket.org/infrared/signals/outputs/all"
+	_ "opspect/signals/outputs/all"
 )
 
 func TestAgent_LoadPlugin(t *testing.T) {

@@ -3,8 +3,8 @@ package couchbase
 import (
 	"sync"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	couchbase "github.com/couchbase/go-couchbase"
+	"opspect/signals/inputs/plugins"
 )
 
 type Couchbase struct {

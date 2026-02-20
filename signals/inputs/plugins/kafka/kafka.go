@@ -2,9 +2,9 @@ package kafka
 
 import (
 	"fmt"
+	"github.com/IBM/sarama"
+	"opspect/signals/inputs/plugins"
 	"time"
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"github.com/Shopify/sarama"
 )
 
 type Kafka struct {
@@ -37,7 +37,8 @@ func (k *Kafka) Connect() error {
 	k.consumer = consumer
 	return nil
 }
-var message [] byte
+
+var message []byte
 
 func (k *Kafka) Close() error {
 	return k.consumer.Close()
@@ -64,7 +65,7 @@ func (k *Kafka) ReadFromConsumer(i int64) (int64, error) {
 
 		err = sarama.ErrOffsetOutOfRange
 		if part_len > 0 {
-			partitionConsumer, err = k.consumer.ConsumePartition(k.Topic, partitions[part_len - 1], i)
+			partitionConsumer, err = k.consumer.ConsumePartition(k.Topic, partitions[part_len-1], i)
 		}
 		if err == nil {
 			//fmt.Printf("Reading from consumer 3 \n")
@@ -87,13 +88,13 @@ func (k *Kafka) ReadFromConsumer(i int64) (int64, error) {
 var isBlocked = make(chan bool)
 var hasNewData bool
 
-
 var bailout bool = false
-func (k * Kafka) ProcessMessages() {
+
+func (k *Kafka) ProcessMessages() {
 	var i int64 = 0
 	var err error
 	go k.notifyChannels()
-	for ; !bailout; {
+	for !bailout {
 		k.Connect()
 		i, err = k.ReadFromConsumer(i)
 		if err != nil {
@@ -108,6 +109,7 @@ func (k * Kafka) ProcessMessages() {
 }
 
 var notifyChannelMap = make(map[chan bool]chan bool)
+
 func SubscribeForNotification(nChannel *chan bool) {
 	notifyChannelMap[*nChannel] = *nChannel
 }
@@ -116,9 +118,9 @@ func UnsubscribeForNotification(nChannel *chan bool) {
 	delete(notifyChannelMap, *nChannel)
 }
 
-func (k * Kafka)notifyChannels() {
+func (k *Kafka) notifyChannels() {
 	var prev_message string = ""
-	for ; !bailout; {
+	for !bailout {
 		blockValue := <-isBlocked
 		//fmt.Printf("B Got unblocked %v\n", blockValue)
 		if blockValue == false && hasNewData == true {
@@ -156,10 +158,9 @@ func init() {
 	})
 }
 
-func (p *Kafka) GatherUnmanagedAsync(shutdown chan struct {}) error {
+func (p *Kafka) GatherUnmanagedAsync(shutdown chan struct{}) error {
 	return nil
 }
-
 
 // Gather ...
 func (p *Kafka) Gather(acc plugins.Accumulator) error {

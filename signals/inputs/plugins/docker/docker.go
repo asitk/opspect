@@ -1,7 +1,6 @@
 package system
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"regexp"
@@ -10,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	"github.com/fsouza/go-dockerclient"
+	"opspect/signals/inputs/plugins"
 )
 
 type Docker struct {
@@ -24,7 +23,7 @@ type Docker struct {
 type DockerClient interface {
 	// Docker Client wrapper
 	// Useful for test
-	Info() (*docker.Env, error)
+	Info() (*docker.DockerInfo, error)
 	ListContainers(opts docker.ListContainersOptions) ([]docker.APIContainers, error)
 	Stats(opts docker.StatsOptions) error
 }
@@ -116,7 +115,7 @@ func (d *Docker) Gather(acc plugins.Accumulator) error {
 
 func (d *Docker) gatherInfo(acc plugins.Accumulator) error {
 	// Init vars
-	var driverStatus [][]string
+	var driverStatus [][2]string
 	dataFields := make(map[string]interface{})
 	metadataFields := make(map[string]interface{})
 	now := time.Now()
@@ -127,12 +126,12 @@ func (d *Docker) gatherInfo(acc plugins.Accumulator) error {
 	}
 
 	fields := map[string]interface{}{
-		"n_cpus":                  info.GetInt64("NCPU"),
-		"n_used_file_descriptors": info.GetInt64("NFd"),
-		"n_containers":            info.GetInt64("Containers"),
-		"n_images":                info.GetInt64("Images"),
-		"n_goroutines":            info.GetInt64("NGoroutines"),
-		"n_listener_events":       info.GetInt64("NEventsListener"),
+		"n_cpus":                  info.NCPU,
+		"n_used_file_descriptors": info.NFd,
+		"n_containers":            info.Containers,
+		"n_images":                info.Images,
+		"n_goroutines":            info.NGoroutines,
+		"n_listener_events":       info.NEventsListener,
 	}
 	// Add metrics
 	acc.AddFields("docker",
@@ -140,12 +139,12 @@ func (d *Docker) gatherInfo(acc plugins.Accumulator) error {
 		nil,
 		now)
 	acc.AddFields("docker",
-		map[string]interface{}{"memory_total": info.GetInt64("MemTotal")},
+		map[string]interface{}{"memory_total": info.MemTotal},
 		map[string]string{"unit": "bytes"},
 		now)
 	// Get storage metrics
-	driverStatusRaw := []byte(info.Get("DriverStatus"))
-	json.Unmarshal(driverStatusRaw, &driverStatus)
+	driverStatusRaw := info.DriverStatus
+	driverStatus = driverStatusRaw
 	for _, rawData := range driverStatus {
 		// Try to convert string to int (bytes)
 		value, err := parseSize(rawData[1])

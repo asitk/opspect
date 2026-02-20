@@ -1,4 +1,4 @@
-//The package implements processing data and creating stats for it
+// The package implements processing data and creating stats for it
 package nwam
 
 import (
@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
-	"bitbucket.org/infrared/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
+	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
+	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
 
-	"bitbucket.org/infrared/util/discovery"
+	"opspect/util/discovery"
 )
 
 var hmap map[string]ioState
@@ -59,7 +59,7 @@ func createMap(key string, pkt_timestamp time.Time) {
 func ProcessStreamData(hkey string, svc discovery.ServiceCategory, role nwamdecoder.Role, n int, byArr []byte, pkt_timestamp time.Time) {
 	d := nwamdecoder.GetDecoderType(svc)
 	dec := nwamdecoder.GetDecoder(d)
-	nwamutils.DebugPrint("In Processdata Got %s of length %d", role, n)
+	nwamutils.DebugPrint("In Processdata Got %s of length %d", nwamdecoder.RoleToString(role), n)
 	//Check for previous data first and append to it
 	if len(hmap) == 0 {
 		hmap = make(map[string]ioState)
@@ -81,7 +81,7 @@ func ProcessStreamData(hkey string, svc discovery.ServiceCategory, role nwamdeco
 	}
 	hmap[hkey] = ios
 	if prev_len > 0 {
-		nwamutils.DebugPrint("%s with prev_len = %d", role, prev_len)
+		nwamutils.DebugPrint("%s with prev_len = %d", nwamdecoder.RoleToString(role), prev_len)
 	}
 	byteArr := make([]byte, prev_len+n)
 	if prev_len > 0 {
@@ -98,7 +98,7 @@ func ProcessStreamData(hkey string, svc discovery.ServiceCategory, role nwamdeco
 	for ptr = 0; ptr < n; {
 		if (n - ptr) >= 4 {
 			len, seq_id, m = nwamdecoder.GetLengthAndSeqId(dec, byteArr, ptr)
-			nwamutils.DebugPrint("%s len = %d and seqid = %d", role, len, seq_id)
+			nwamutils.DebugPrint("%s len = %d and seqid = %d", nwamdecoder.RoleToString(role), len, seq_id)
 			ptr += m
 			if len == 0 {
 				if m == 0 { //Else it will lead to infinite loop
@@ -108,13 +108,13 @@ func ProcessStreamData(hkey string, svc discovery.ServiceCategory, role nwamdeco
 			}
 		} else {
 			copyExcessData(hkey, role, ptr, byteArr)
-			nwamutils.DebugPrint("%s in excess data region ptr = %s size = %d", role, ptr, n)
+			nwamutils.DebugPrint("%s in excess data region ptr = %d size = %d", nwamdecoder.RoleToString(role), ptr, n)
 			break
 		}
 
 		if (ptr + len) > n {
 			copyExcessData(hkey, role, ptr-m, byteArr)
-			nwamutils.DebugPrint("%s in excess data region ptr = %d length = %d size = %d", role, ptr-m, len, n)
+			nwamutils.DebugPrint("%s in excess data region ptr = %d length = %d size = %d", nwamdecoder.RoleToString(role), ptr-m, len, n)
 			break
 		}
 
@@ -327,7 +327,7 @@ func ProcessSummary(lastTime time.Time) []SummaryStruct {
 
 	var summaryList []SummaryStruct
 	for k, v := range summaryMap {
-		nwamutils.DebugPrint(k)
+		nwamutils.DebugPrint("%s", k)
 		v.StartTime /= 1000000
 		v.EndTime /= 1000000
 		v.AvgRspSize /= v.ReqCount

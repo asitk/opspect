@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/telegraf/testutil"
+	"opspect/signals/testutil"
 
 	"github.com/fsouza/go-dockerclient"
 	"github.com/stretchr/testify/require"
@@ -200,9 +200,19 @@ func testStats() *docker.Stats {
 type FakeDockerClient struct {
 }
 
-func (d FakeDockerClient) Info() (*docker.Env, error) {
-	env := docker.Env{"Containers=108", "OomKillDisable=false", "SystemTime=2016-02-24T00:55:09.15073105-05:00", "NEventsListener=0", "ID=5WQQ:TFWR:FDNG:OKQ3:37Y4:FJWG:QIKK:623T:R3ME:QTKB:A7F7:OLHD", "Debug=false", "LoggingDriver=json-file", "KernelVersion=4.3.0-1-amd64", "IndexServerAddress=https://index.docker.io/v1/", "MemTotal=3840757760", "Images=199", "CpuCfsQuota=true", "Name=absol", "SwapLimit=false", "IPv4Forwarding=true", "ExecutionDriver=native-0.2", "InitSha1=23a51f3c916d2b5a3bbb31caf301fd2d14edd518", "ExperimentalBuild=false", "CpuCfsPeriod=true", "RegistryConfig={\"IndexConfigs\":{\"docker.io\":{\"Mirrors\":null,\"Name\":\"docker.io\",\"Official\":true,\"Secure\":true}},\"InsecureRegistryCIDRs\":[\"127.0.0.0/8\"],\"Mirrors\":null}", "OperatingSystem=Linux Mint LMDE (containerized)", "BridgeNfIptables=true", "HttpsProxy=", "Labels=null", "MemoryLimit=false", "DriverStatus=[[\"Pool Name\",\"docker-8:1-1182287-pool\"],[\"Pool Blocksize\",\"65.54 kB\"],[\"Backing Filesystem\",\"extfs\"],[\"Data file\",\"/dev/loop0\"],[\"Metadata file\",\"/dev/loop1\"],[\"Data Space Used\",\"17.3 GB\"],[\"Data Space Total\",\"107.4 GB\"],[\"Data Space Available\",\"36.53 GB\"],[\"Metadata Space Used\",\"20.97 MB\"],[\"Metadata Space Total\",\"2.147 GB\"],[\"Metadata Space Available\",\"2.127 GB\"],[\"Udev Sync Supported\",\"true\"],[\"Deferred Removal Enabled\",\"false\"],[\"Data loop file\",\"/var/lib/docker/devicemapper/devicemapper/data\"],[\"Metadata loop file\",\"/var/lib/docker/devicemapper/devicemapper/metadata\"],[\"Library Version\",\"1.02.115 (2016-01-25)\"]]", "NFd=19", "HttpProxy=", "Driver=devicemapper", "NGoroutines=39", "InitPath=/usr/lib/docker.io/dockerinit", "NCPU=4", "DockerRootDir=/var/lib/docker", "NoProxy=", "BridgeNfIp6tables=true"}
-	return &env, nil
+func (d FakeDockerClient) Info() (*docker.DockerInfo, error) {
+	info := docker.DockerInfo{
+		Containers:      108,
+		OomKillDisable:  false,
+		NCPU:            4,
+		NFd:             19,
+		Images:          199,
+		NGoroutines:     39,
+		NEventsListener: 0,
+		MemTotal:        3840757760,
+		DriverStatus:    [][2]string{{"Pool Name", "docker-8:1-1182287-pool"}, {"Pool Blocksize", "65.54 kB"}},
+	}
+	return &info, nil
 }
 
 func (d FakeDockerClient) ListContainers(opts docker.ListContainersOptions) ([]docker.APIContainers, error) {

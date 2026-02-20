@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
-	"bitbucket.org/infrared/config"
-	"bitbucket.org/infrared/models/client"
+	"opspect/config"
+	"opspect/models/client"
 )
 
 // Accumulator ...

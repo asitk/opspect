@@ -6,13 +6,13 @@ import (
 	"syscall"
 	"testing"
 
-	"bitbucket.org/infrared/util/test"
-	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/disk"
-	"github.com/shirou/gopsutil/mem"
-	"github.com/shirou/gopsutil/net"
+	"github.com/shirou/gopsutil/v4/cpu"
+	"github.com/shirou/gopsutil/v4/disk"
+	"github.com/shirou/gopsutil/v4/mem"
+	"github.com/shirou/gopsutil/v4/net"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/util/test"
 )
 
 func TestSystemStats_GenerateStats(t *testing.T) {
@@ -22,7 +22,7 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 
 	var acc test.Accumulator
 
-	cts := cpu.CPUTimesStat{
+	cts := cpu.TimesStat{
 		CPU:       "cpu0",
 		User:      3.1,
 		System:    8.2,
@@ -36,7 +36,7 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 		GuestNice: 0.324,
 	}
 
-	cts2 := cpu.CPUTimesStat{
+	cts2 := cpu.TimesStat{
 		CPU:       "cpu0",
 		User:      11.4,     // increased by 8.3
 		System:    10.9,     // increased by 2.7
@@ -50,9 +50,9 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 		GuestNice: 2.524,    // increased by 2.2
 	}
 
-	mps.On("CPUTimes").Return([]cpu.CPUTimesStat{cts}, nil)
+	mps.On("CPUTimes").Return([]cpu.TimesStat{cts}, nil)
 
-	du := []*disk.DiskUsageStat{
+	du := []*disk.UsageStat{
 		{
 			Path:        "/",
 			Fstype:      "ext4",
@@ -73,7 +73,7 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 
 	mps.On("DiskUsage").Return(du, nil)
 
-	diskio1 := disk.DiskIOCountersStat{
+	diskio1 := disk.IOCountersStat{
 
 		ReadCount:    888,
 		WriteCount:   5341,
@@ -85,7 +85,7 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 		IoTime:       123552,
 		SerialNumber: "ab-123-ad",
 	}
-	diskio2 := disk.DiskIOCountersStat{
+	diskio2 := disk.IOCountersStat{
 		ReadCount:    444,
 		WriteCount:   2341,
 		ReadBytes:    200000,
@@ -97,9 +97,9 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 		SerialNumber: "bb-123-ad",
 	}
 
-	mps.On("DiskIO").Return(map[string]disk.DiskIOCountersStat{"sda1": diskio1, "sdb1": diskio2}, nil)
+	mps.On("DiskIO").Return(map[string]disk.IOCountersStat{"sda1": diskio1, "sdb1": diskio2}, nil)
 
-	netio := net.NetIOCountersStat{
+	netio := net.IOCountersStat{
 		Name:        "eth0",
 		BytesSent:   1123,
 		BytesRecv:   8734422,
@@ -111,10 +111,10 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 		Dropout:     1,
 	}
 
-	mps.On("NetIO").Return([]net.NetIOCountersStat{netio}, nil)
+	mps.On("NetIO").Return([]net.IOCountersStat{netio}, nil)
 
-	netprotos := []net.NetProtoCountersStat{
-		net.NetProtoCountersStat{
+	netprotos := []net.ProtoCountersStat{
+		net.ProtoCountersStat{
 			Protocol: "Udp",
 			Stats: map[string]int64{
 				"InDatagrams": 4655,
@@ -150,17 +150,17 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 
 	mps.On("SwapStat").Return(sms, nil)
 
-	netstats := []net.NetConnectionStat{
-		net.NetConnectionStat{
+	netstats := []net.ConnectionStat{
+		net.ConnectionStat{
 			Type: syscall.SOCK_DGRAM,
 		},
-		net.NetConnectionStat{
+		net.ConnectionStat{
 			Status: "ESTABLISHED",
 		},
-		net.NetConnectionStat{
+		net.ConnectionStat{
 			Status: "ESTABLISHED",
 		},
-		net.NetConnectionStat{
+		net.ConnectionStat{
 			Status: "CLOSE",
 		},
 	}
@@ -195,7 +195,7 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 	assertContainsTaggedFloat(t, &acc, "time_guest_nice", 0.324, 0, cputags)
 
 	mps2 := MockPS{}
-	mps2.On("CPUTimes").Return([]cpu.CPUTimesStat{cts2}, nil)
+	mps2.On("CPUTimes").Return([]cpu.TimesStat{cts2}, nil)
 	cs.ps = &mps2
 
 	// Should have added cpu percentages too
@@ -384,16 +384,17 @@ func TestSystemStats_GenerateStats(t *testing.T) {
 // if the measurement is of the wrong type, or if no matching measurements are found
 //
 // Paramaters:
-//     t *testing.T            : Testing object to use
-//     acc test.Accumulator: Accumulator to examine
-//     measurement string      : Name of the measurement to examine
-//     expectedValue float64   : Value to search for within the measurement
-//     delta float64           : Maximum acceptable distance of an accumulated value
-//                               from the expectedValue parameter. Useful when
-//                               floating-point arithmatic imprecision makes looking
-//                               for an exact match impractical
-//     tags map[string]string  : Tag set the found measurement must have. Set to nil to
-//                               ignore the tag set.
+//
+//	t *testing.T            : Testing object to use
+//	acc test.Accumulator: Accumulator to examine
+//	measurement string      : Name of the measurement to examine
+//	expectedValue float64   : Value to search for within the measurement
+//	delta float64           : Maximum acceptable distance of an accumulated value
+//	                          from the expectedValue parameter. Useful when
+//	                          floating-point arithmatic imprecision makes looking
+//	                          for an exact match impractical
+//	tags map[string]string  : Tag set the found measurement must have. Set to nil to
+//	                          ignore the tag set.
 func assertContainsTaggedFloat(
 	t *testing.T,
 	acc *test.Accumulator,

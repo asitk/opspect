@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	"github.com/gonuts/go-shellquote"
+	"opspect/signals/inputs/plugins"
 )
 
 const sampleConfig = `

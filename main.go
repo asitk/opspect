@@ -8,12 +8,12 @@ import (
 	"strings"
 	"syscall"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
-	"bitbucket.org/infrared/config"
-	"bitbucket.org/infrared/signals"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/all"
-	_ "bitbucket.org/infrared/signals/outputs/all"
+	"opspect/config"
+	"opspect/signals"
+	_ "opspect/signals/inputs/plugins/all"
+	_ "opspect/signals/outputs/all"
 )
 
 var fDebug = flag.Bool("debug", false,
@@ -135,7 +135,7 @@ func main() {
 	}
 
 	shutdown := make(chan struct{})
-	signals := make(chan os.Signal)
+	signals := make(chan os.Signal, 1)
 	signal.Notify(signals, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
 
 	go func() {

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	_ "github.com/go-sql-driver/mysql"
+	"opspect/signals/inputs/plugins"
 )
 
 type Mysql struct {

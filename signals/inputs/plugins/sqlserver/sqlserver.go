@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 
 	// go-mssqldb initialization
 	_ "github.com/zensqlmonitor/go-mssqldb"

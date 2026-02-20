@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/assert"
+	"opspect/signals/testutil"
 )
 
 var tags = make(map[string]string)

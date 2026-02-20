@@ -2,10 +2,10 @@ package all
 
 // importing the plugins
 import (
-	_ "bitbucket.org/infrared/signals/inputs/plugins/logs"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/kafka"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/memcached"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/nwgraph"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/procstat"
-	_ "bitbucket.org/infrared/signals/inputs/plugins/system"
+	_ "opspect/signals/inputs/plugins/kafka"
+	_ "opspect/signals/inputs/plugins/logs"
+	_ "opspect/signals/inputs/plugins/memcached"
+	_ "opspect/signals/inputs/plugins/nwgraph"
+	_ "opspect/signals/inputs/plugins/procstat"
+	_ "opspect/signals/inputs/plugins/system"
 )

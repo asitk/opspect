@@ -11,13 +11,13 @@ import (
 	"strings"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
-	"bitbucket.org/infrared/models/client"
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"bitbucket.org/infrared/signals/outputs"
 	"github.com/naoina/toml"
 	"github.com/naoina/toml/ast"
+	"opspect/models/client"
+	"opspect/signals/inputs/plugins"
+	"opspect/signals/outputs"
 )
 
 /////////////////////////////////////////////////////////////////////
@@ -58,8 +58,9 @@ func ReadLines(filename string) ([]string, error) {
 // ReadLines reads contents from file and splits them by new line.
 // The offset tells at which line number to start.
 // The count determines the number of lines to read (starting from offset):
-//   n >= 0: at most n lines
-//   n < 0: whole file
+//
+//	n >= 0: at most n lines
+//	n < 0: whole file
 func ReadLinesOffsetN(filename string, offset uint, n int) ([]string, error) {
 	f, err := os.Open(filename)
 	if err != nil {
@@ -434,7 +435,7 @@ var servicePluginHeader = `
 
 // PrintSampleConfig prints the sample config
 func PrintSampleConfig(pluginFilters []string, outputFilters []string) {
-	fmt.Printf(header)
+	fmt.Print(header)
 
 	// Filter outputs
 	var onames []string
@@ -462,7 +463,7 @@ func PrintSampleConfig(pluginFilters []string, outputFilters []string) {
 	sort.Strings(pnames)
 
 	// Print Plugins
-	fmt.Printf(pluginHeader)
+	fmt.Print(pluginHeader)
 	servPlugins := make(map[string]plugins.ServicePlugin)
 	for _, pname := range pnames {
 		creator := plugins.Plugins[pname]
@@ -478,7 +479,7 @@ func PrintSampleConfig(pluginFilters []string, outputFilters []string) {
 	}
 
 	// Print Service Plugins
-	fmt.Printf(servicePluginHeader)
+	fmt.Print(servicePluginHeader)
 	for name, plugin := range servPlugins {
 		printConfig(name, plugin, "plugins")
 	}
@@ -495,7 +496,7 @@ func printConfig(name string, p printer, op string) {
 	if config == "" {
 		fmt.Printf("\n  # no configuration\n")
 	} else {
-		fmt.Printf(config)
+		fmt.Print(config)
 	}
 }
 

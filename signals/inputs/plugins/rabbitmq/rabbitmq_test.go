@@ -6,9 +6,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"bitbucket.org/infrared/signals/testutil"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/signals/testutil"
 )
 
 const sampleOverviewResponse = `

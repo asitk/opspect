@@ -1,17 +1,17 @@
 package procstat
 
 import (
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"bitbucket.org/infrared/util/discovery"
+	"opspect/signals/inputs/plugins"
+	"opspect/util/discovery"
 )
 
 type Specification struct {
 	PidFile  string `toml:"pid_file"`
 	Exe      string `toml:"exe"`
-	Prefix   string `toml:"prefix`
+	Prefix   string `toml:"prefix"`
 	Pattern  string `toml:"pattern"`
-	Category int    `toml:"category`
-	Name     string `toml:"name`
+	Category int    `toml:"category"`
+	Name     string `toml:"name"`
 }
 
 type Procstat struct {

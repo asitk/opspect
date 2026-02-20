@@ -3,7 +3,7 @@ package system
 import (
 	"fmt"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type DiskStats struct {

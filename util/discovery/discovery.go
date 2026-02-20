@@ -15,7 +15,7 @@ import (
 	"strconv"
 	"strings"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 )
 
 // ServiceCategory ...
@@ -296,7 +296,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeWebServer, "nginx")
 		if err != nil {
-			log.Printf("nginx updatePI % %v", err)
+			log.Printf("nginx updatePI %v", err)
 		}
 	}
 
@@ -307,7 +307,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeCache, "redis-server")
 		if err != nil {
-			log.Printf("redis-server updatePI % %v", err)
+			log.Printf("redis-server updatePI %v", err)
 		}
 	}
 	pids, err = PidsFromExe("memcached")
@@ -316,7 +316,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeCache, "memcached")
 		if err != nil {
-			log.Printf("memcached updatePI % %v", err)
+			log.Printf("memcached updatePI %v", err)
 		}
 	}
 
@@ -333,7 +333,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeQueue, "kafka")
 		if err != nil {
-			log.Printf("kafka updatePI %%v", err)
+			log.Printf("kafka updatePI %v", err)
 		}
 	}
 
@@ -344,7 +344,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeRDBMS, "mysqld")
 		if err != nil {
-			log.Printf("mysqld updatePI %p %v", err)
+			log.Printf("mysqld updatePI %v", err)
 		}
 	}
 	pids, err = PidsFromExe("postgres")
@@ -362,7 +362,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeDOCStore, "mongod")
 		if err != nil {
-			log.Printf("mongod updatePI %%v", err)
+			log.Printf("mongod updatePI %v", err)
 		}
 	}
 	pids, err = PidsFromExe("couchbase")
@@ -371,7 +371,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeDOCStore, "couchbase")
 		if err != nil {
-			log.Printf("couchbase %updatePI %v", err)
+			log.Printf("couchbase updatePI %v", err)
 		}
 	}
 
@@ -382,7 +382,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 	} else {
 		err = updatePI(&pids, &procinfolist, &procinfo, TypeWebServer, "jetty")
 		if err != nil {
-			log.Printf("jetty updatePI %%v", err)
+			log.Printf("jetty updatePI %v", err)
 		}
 	}
 
@@ -415,7 +415,7 @@ func GetProcessSnapshot(Specifications []Specification) ([]ProcInfoSnapshot, err
 			}
 
 			if err != nil {
-				log.Printf("%s updatePI %%v", Specifications[i].Name, err)
+				log.Printf("%s updatePI %v", Specifications[i].Name, err)
 			}
 		}
 	}

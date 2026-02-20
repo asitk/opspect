@@ -4,9 +4,9 @@ import (
 	"net/url"
 	"time"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"opspect/signals/inputs/plugins"
 )
 
 type Server struct {
@@ -25,7 +25,7 @@ func (s *Server) gatherData(acc plugins.Accumulator) error {
 	s.Session.SetMode(mgo.Eventual, true)
 	s.Session.SetSocketTimeout(0)
 	result := &ServerStatus{}
-	err := s.Session.DB("admin").Run(bson.D{{"serverStatus", 1}, {"recordStats", 0}}, result)
+	err := s.Session.DB("admin").Run(bson.D{{Name: "serverStatus", Value: 1}, {Name: "recordStats", Value: 0}}, result)
 	if err != nil {
 		return err
 	}

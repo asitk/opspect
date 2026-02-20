@@ -2,15 +2,11 @@ package nwgraph
 
 import (
 	"fmt"
-	"bitbucket.org/infrared/signals/inputs/plugins"
-	"bitbucket.org/infrared/signals/inputs/plugins/kafka"
-	"bitbucket.org/infrared/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
-	"bitbucket.org/infrared/signals/inputs/plugins/nwgraph/nwmon"
-
-
-
+	"opspect/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins/kafka"
+	"opspect/signals/inputs/plugins/nwgraph/nwmon"
+	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
 )
-
 
 // NWGraph ...
 type NWGraph struct {
@@ -24,12 +20,14 @@ func NewNWGraph() *NWGraph {
 	go getNodeDetails()
 	return &NWGraph{}
 }
+
 var tagChanged = make(chan bool)
 var tags string = ""
 var kafkaReadNotify = make(chan bool)
-func getNodeDetails()  {
+
+func getNodeDetails() {
 	kafka.SubscribeForNotification(&kafkaReadNotify)
-	for ;<- kafkaReadNotify; {
+	for <-kafkaReadNotify {
 		message := kafka.Read()
 		if len(message) > 0 {
 			//fmt.Printf("NWGraph Got message from kafka %s\n", message)
@@ -77,24 +75,23 @@ func (p *NWGraph) GatherUnmanagedAsync(shutdown chan struct{}) error {
 	return nil
 }
 
-
 // Gather ...
 func (p *NWGraph) Gather(acc plugins.Accumulator) error {
-	var stats [] nwam.SummaryStruct = nwmon.GetStats()
+	var stats []nwam.SummaryStruct = nwmon.GetStats()
 
 	//Use channels to communicate
 	communicate(acc, stats)
 	return nil
 }
 
-func communicate(acc plugins.Accumulator, stats [] nwam.SummaryStruct) bool {
+func communicate(acc plugins.Accumulator, stats []nwam.SummaryStruct) bool {
 	//acc.Add(mname, value, p.tags)
 	for _, summary := range stats {
-		tags  := make(map[string]string)
+		tags := make(map[string]string)
 		tags["dst"] = fmt.Sprintf("%s:%s", summary.DstIP, summary.DstPort)
 		tags["binding"] = fmt.Sprintf("%s:%s:%s:%d", summary.SrcIP, summary.DstIP, summary.DstPort, summary.StartTime)
 		tags["replace_ts"] = fmt.Sprintf("%d", summary.StartTime)
-		acc.Add("duration",summary.EndTime - summary.StartTime, tags)
+		acc.Add("duration", summary.EndTime-summary.StartTime, tags)
 		acc.Add("src_ip", summary.SrcIP, tags)
 		acc.Add("dst_ip", summary.DstIP, tags)
 		acc.Add("dst_port", summary.DstPort, tags)

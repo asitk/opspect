@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"syscall"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type NetStats struct {

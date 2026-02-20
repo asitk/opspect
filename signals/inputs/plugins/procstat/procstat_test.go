@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"testing"
 
-	"bitbucket.org/infrared/util/test"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"opspect/util/test"
 )
 
 func TestGather(t *testing.T) {
@@ -19,7 +19,7 @@ func TestGather(t *testing.T) {
 	file.Write([]byte(strconv.Itoa(pid)))
 	file.Close()
 	defer os.Remove(file.Name())
-	specifications := []*Specification{&Specification{PidFile: file.Name(), Prefix: "foo"}}
+	specifications := []Specification{{PidFile: file.Name(), Prefix: "foo"}}
 	p := Procstat{
 		Specifications: specifications,
 	}

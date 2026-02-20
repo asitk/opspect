@@ -9,7 +9,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 // PuppetAgent is a PuppetAgent plugin

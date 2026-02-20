@@ -5,7 +5,7 @@ import (
 	"net"
 	"strings"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type NetIOStats struct {

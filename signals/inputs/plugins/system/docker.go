@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package system
@@ -5,7 +6,7 @@ package system
 import (
 	"fmt"
 
-	"bitbucket.org/infrared/signals/inputs/plugins"
+	"opspect/signals/inputs/plugins"
 )
 
 type DockerStats struct {

@@ -1,11 +1,11 @@
 package kafka
 
 import (
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 
-	"bitbucket.org/infrared/models/client"
-	"bitbucket.org/infrared/signals/outputs"
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
+	"opspect/models/client"
+	"opspect/signals/outputs"
 )
 
 type Kafka struct {
