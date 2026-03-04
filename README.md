@@ -4,8 +4,8 @@ Orchestration for Cloud Apps: Modern application architectures are complex
 with many interconnected components. User requests and underlying business
 workflows have multiple touchpoints across the app topology. It is critical
 to be able to view performance of the system as a whole and react to
-business flow disruption in realtime. Opscog takes a new approach towards
-instrumentation of systems and flows using AI. Opscog allows you to setup
+business flow disruption in realtime. Opscog takes a different approach in
+instrumentation of systems & flows using AI. Opscog allows you to setup
 hooks and then leverage ML/AI to prevent downtime and take custom actions.
 
 ## 🚀 Key Characteristics
