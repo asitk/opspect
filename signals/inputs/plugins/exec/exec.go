@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/gonuts/go-shellquote"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 const sampleConfig = `

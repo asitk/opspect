@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 )
 
 func TestRedisConnect(t *testing.T) {

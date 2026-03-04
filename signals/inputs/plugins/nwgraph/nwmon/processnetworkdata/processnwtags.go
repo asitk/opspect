@@ -3,8 +3,8 @@ package nwam
 import (
 	"encoding/json"
 	"fmt"
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
-	"opspect/util/discovery"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
+	"opscog/util/discovery"
 )
 
 type NodeDetail struct {

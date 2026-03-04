@@ -3,11 +3,11 @@
 //
 // Copyright 2013, Proofpoint Inc. All rights reserved.
 //
-package com.opspect.kairosdb.client.builder.aggregator;
+package com.opscog.kairosdb.client.builder.aggregator;
 
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
-import com.opspect.kairosdb.client.builder.Aggregator;
+import com.opscog.kairosdb.client.builder.Aggregator;
 
 /** Creates an aggregator that takes custom JSON. */
 public class CustomAggregator extends Aggregator {

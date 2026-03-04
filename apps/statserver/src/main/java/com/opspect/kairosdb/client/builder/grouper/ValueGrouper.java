@@ -13,12 +13,12 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder.grouper;
+package com.opscog.kairosdb.client.builder.grouper;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.builder.Grouper;
+import com.opscog.kairosdb.client.builder.Grouper;
 
 /**
  * Grouper used to group by metric value. Groups are a range of values specified by range size. For

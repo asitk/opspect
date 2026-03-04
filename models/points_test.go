@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"opspect/models"
+	"opscog/models"
 )
 
 var (

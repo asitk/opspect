@@ -1,4 +1,4 @@
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
 public class DataFormatException extends Exception {
   public DataFormatException() {

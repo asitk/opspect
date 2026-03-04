@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type MongodbData struct {

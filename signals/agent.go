@@ -13,12 +13,12 @@ import (
 
 	"strings"
 
-	"opspect/config"
-	"opspect/models/client"
-	"opspect/signals/inputs/plugins"
-	"opspect/signals/inputs/plugins/kafka"
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
-	"opspect/signals/outputs"
+	"opscog/config"
+	"opscog/models/client"
+	"opscog/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins/kafka"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
+	"opscog/signals/outputs"
 )
 
 // Agent collects data based on the given config

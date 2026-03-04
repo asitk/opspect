@@ -13,14 +13,14 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder.aggregator;
+package com.opscog.kairosdb.client.builder.aggregator;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.builder.Aggregator;
-import com.opspect.kairosdb.client.builder.TimeUnit;
+import com.opscog.kairosdb.client.builder.Aggregator;
+import com.opscog.kairosdb.client.builder.TimeUnit;
 
 public class SamplingAggregator extends Aggregator {
   private Sampling sampling;

@@ -3,7 +3,7 @@
 //
 // Copyright 2013, Proofpoint Inc. All rights reserved.
 //
-package com.opspect.kairosdb.client;
+package com.opscog.kairosdb.client;
 
 import java.io.IOException;
 import java.io.InputStream;

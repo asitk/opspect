@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // Zookeeper is a zookeeper plugin

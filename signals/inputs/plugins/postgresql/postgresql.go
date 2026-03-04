@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"github.com/lib/pq"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type Postgresql struct {

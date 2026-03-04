@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ public class clusterattributes {
       long sts,
       long ets,
       ArrayList<clusterstats> stats,
-      com.opspect.engine.thermal thermal,
+      com.opscog.engine.thermal thermal,
       ArrayList<clusterconnection> connections) {
     this.method = method;
     this.deployment_id = deployment_id;
@@ -68,7 +68,7 @@ public class clusterattributes {
     return stats;
   }
 
-  public com.opspect.engine.thermal getThermal() {
+  public com.opscog.engine.thermal getThermal() {
     return thermal;
   }
 

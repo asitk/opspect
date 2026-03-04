@@ -9,8 +9,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"opspect/config"
-	"opspect/models/client"
+	"opscog/config"
+	"opscog/models/client"
 )
 
 // Accumulator ...

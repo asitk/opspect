@@ -1,9 +1,9 @@
-package com.opspect.kairosdb.client.builder.aggregator;
+package com.opscog.kairosdb.client.builder.aggregator;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.opspect.kairosdb.client.builder.Aggregator;
-import com.opspect.kairosdb.client.builder.TimeUnit;
+import com.opscog.kairosdb.client.builder.Aggregator;
+import com.opscog.kairosdb.client.builder.TimeUnit;
 
 public class RateAggregator extends Aggregator {
   private TimeUnit unit;

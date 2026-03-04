@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"gopkg.in/mgo.v2"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type MongoDB struct {

@@ -1,15 +1,15 @@
-package com.opspect.kairosdb.client.deserializer;
+package com.opscog.kairosdb.client.deserializer;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.opspect.kairosdb.client.DataPointTypeRegistry;
-import com.opspect.kairosdb.client.builder.DataPoint;
-import com.opspect.kairosdb.client.response.GroupResult;
-import com.opspect.kairosdb.client.response.Results;
-import com.opspect.kairosdb.client.response.grouping.DefaultGroupResult;
+import com.opscog.kairosdb.client.DataPointTypeRegistry;
+import com.opscog.kairosdb.client.builder.DataPoint;
+import com.opscog.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.response.Results;
+import com.opscog.kairosdb.client.response.grouping.DefaultGroupResult;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;

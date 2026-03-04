@@ -13,17 +13,17 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
 import static com.google.common.base.Preconditions.checkState;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.opspect.kairosdb.client.builder.aggregator.CustomAggregator;
-import com.opspect.kairosdb.client.builder.grouper.CustomGrouper;
-import com.opspect.kairosdb.client.serializer.CustomAggregatorSerializer;
-import com.opspect.kairosdb.client.serializer.CustomGrouperSerializer;
-import com.opspect.kairosdb.client.serializer.DataPointSerializer;
+import com.opscog.kairosdb.client.builder.aggregator.CustomAggregator;
+import com.opscog.kairosdb.client.builder.grouper.CustomGrouper;
+import com.opscog.kairosdb.client.serializer.CustomAggregatorSerializer;
+import com.opscog.kairosdb.client.serializer.CustomGrouperSerializer;
+import com.opscog.kairosdb.client.serializer.DataPointSerializer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

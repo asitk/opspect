@@ -3,7 +3,7 @@ package puppetagent
 import (
 	"testing"
 
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 )
 
 func TestGather(t *testing.T) {

@@ -3,7 +3,7 @@ package signals
 import (
 	"time"
 
-	"opspect/models/client"
+	"opscog/models/client"
 )
 
 type Metric interface {

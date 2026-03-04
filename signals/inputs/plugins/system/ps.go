@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"opspect/config"
-	"opspect/signals/inputs/plugins"
+	"opscog/config"
+	"opscog/signals/inputs/plugins"
 
 	dc "github.com/fsouza/go-dockerclient"
 	"github.com/shirou/gopsutil/v4/cpu"

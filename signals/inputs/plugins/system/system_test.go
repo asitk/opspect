@@ -12,7 +12,7 @@ import (
 	"github.com/shirou/gopsutil/v4/net"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"opspect/util/test"
+	"opscog/util/test"
 )
 
 func TestSystemStats_GenerateStats(t *testing.T) {

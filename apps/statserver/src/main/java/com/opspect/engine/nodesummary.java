@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 /** Created by asitk on 10/6/16. */
 public class nodesummary {
@@ -9,7 +9,7 @@ public class nodesummary {
 
   public nodesummary() {}
 
-  public nodesummary(String node, String ip, String scope, com.opspect.engine.thermal thermal) {
+  public nodesummary(String node, String ip, String scope, com.opscog.engine.thermal thermal) {
     this.node = node;
     this.ip = ip;
     this.scope = scope;
@@ -28,7 +28,7 @@ public class nodesummary {
     return scope;
   }
 
-  public com.opspect.engine.thermal getThermal() {
+  public com.opscog.engine.thermal getThermal() {
     return thermal;
   }
 

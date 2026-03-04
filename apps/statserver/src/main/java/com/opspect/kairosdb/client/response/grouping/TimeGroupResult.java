@@ -13,14 +13,14 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.response.grouping;
+package com.opscog.kairosdb.client.response.grouping;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.builder.RelativeTime;
-import com.opspect.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.builder.RelativeTime;
+import com.opscog.kairosdb.client.response.GroupResult;
 
 public class TimeGroupResult extends GroupResult {
   @SerializedName("range_size")

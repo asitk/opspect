@@ -4,8 +4,8 @@ import (
 	log "github.com/sirupsen/logrus"
 
 	"github.com/IBM/sarama"
-	"opspect/models/client"
-	"opspect/signals/outputs"
+	"opscog/models/client"
+	"opscog/signals/outputs"
 )
 
 type Kafka struct {

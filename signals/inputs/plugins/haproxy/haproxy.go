@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // CSV format: https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#9.1

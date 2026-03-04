@@ -2,7 +2,7 @@
 package nwamdecoder
 
 import (
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
 	"time"
 )
 

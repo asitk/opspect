@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 
 	couchbase "github.com/couchbase/go-couchbase"
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 
 	"testing"
 )

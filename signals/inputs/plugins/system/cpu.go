@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/shirou/gopsutil/v4/cpu"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // CPUStats ...

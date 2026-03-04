@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 /** Created by asitk on 8/6/16. */
 public class thermal {

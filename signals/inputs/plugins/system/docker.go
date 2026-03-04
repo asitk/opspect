@@ -6,7 +6,7 @@ package system
 import (
 	"fmt"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type DockerStats struct {

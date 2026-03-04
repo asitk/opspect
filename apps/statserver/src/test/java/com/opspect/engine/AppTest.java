@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -1,11 +1,11 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
-import com.opspect.kairosdb.client.*;
-import com.opspect.kairosdb.client.builder.QueryBuilder;
-import com.opspect.kairosdb.client.builder.QueryMetric;
-import com.opspect.kairosdb.client.builder.TimeUnit;
-import com.opspect.kairosdb.client.response.GetResponse;
-import com.opspect.kairosdb.client.response.QueryResponse;
+import com.opscog.kairosdb.client.*;
+import com.opscog.kairosdb.client.builder.QueryBuilder;
+import com.opscog.kairosdb.client.builder.QueryMetric;
+import com.opscog.kairosdb.client.builder.TimeUnit;
+import com.opscog.kairosdb.client.response.GetResponse;
+import com.opscog.kairosdb.client.response.QueryResponse;
 import java.net.MalformedURLException;
 import java.sql.Date;
 import java.sql.Timestamp;

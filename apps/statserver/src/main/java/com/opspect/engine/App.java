@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;

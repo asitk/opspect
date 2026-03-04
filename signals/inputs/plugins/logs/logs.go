@@ -6,7 +6,7 @@ import (
 
 	"github.com/hpcloud/tail"
 	log "github.com/sirupsen/logrus"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // Logfile ...

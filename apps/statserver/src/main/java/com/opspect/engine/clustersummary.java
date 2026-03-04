@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 /** Created by asitk on 8/6/16. */
 public class clustersummary {
@@ -17,7 +17,7 @@ public class clustersummary {
       String type,
       int nodecount,
       char spof,
-      com.opspect.engine.thermal thermal) {
+      com.opscog.engine.thermal thermal) {
     this.cluster = cluster;
     this.label = label;
     this.type = type;
@@ -46,7 +46,7 @@ public class clustersummary {
     return spof;
   }
 
-  public com.opspect.engine.thermal getThermal() {
+  public com.opscog.engine.thermal getThermal() {
     return thermal;
   }
 

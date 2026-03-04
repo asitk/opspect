@@ -15,9 +15,9 @@ import (
 
 	"github.com/naoina/toml"
 	"github.com/naoina/toml/ast"
-	"opspect/models/client"
-	"opspect/signals/inputs/plugins"
-	"opspect/signals/outputs"
+	"opscog/models/client"
+	"opscog/signals/inputs/plugins"
+	"opscog/signals/outputs"
 )
 
 /////////////////////////////////////////////////////////////////////

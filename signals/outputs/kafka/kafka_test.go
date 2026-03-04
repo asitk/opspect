@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"opspect/util/test"
+	"opscog/util/test"
 )
 
 func TestConnectAndWrite(t *testing.T) {

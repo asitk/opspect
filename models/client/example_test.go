@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"opspect/models/client"
+	"opscog/models/client"
 )
 
 // Create a new client

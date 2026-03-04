@@ -2,10 +2,10 @@ package nwgraph
 
 import (
 	"fmt"
-	"opspect/signals/inputs/plugins"
-	"opspect/signals/inputs/plugins/kafka"
-	"opspect/signals/inputs/plugins/nwgraph/nwmon"
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
+	"opscog/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins/kafka"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata"
 )
 
 // NWGraph ...

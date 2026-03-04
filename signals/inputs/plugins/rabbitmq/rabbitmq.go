@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 const DefaultUsername = "guest"

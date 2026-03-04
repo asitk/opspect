@@ -13,20 +13,20 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
 import static com.google.common.base.Preconditions.*;
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
 import com.google.common.collect.ListMultimap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.builder.aggregator.CustomAggregator;
-import com.opspect.kairosdb.client.serializer.CustomAggregatorSerializer;
-import com.opspect.kairosdb.client.serializer.ListMultiMapSerializer;
-import com.opspect.kairosdb.client.serializer.OrderSerializer;
-import com.opspect.kairosdb.client.serializer.TimeZoneSerializer;
+import com.opscog.kairosdb.client.builder.aggregator.CustomAggregator;
+import com.opscog.kairosdb.client.serializer.CustomAggregatorSerializer;
+import com.opscog.kairosdb.client.serializer.ListMultiMapSerializer;
+import com.opscog.kairosdb.client.serializer.OrderSerializer;
+import com.opscog.kairosdb.client.serializer.TimeZoneSerializer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;

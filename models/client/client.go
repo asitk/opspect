@@ -13,7 +13,7 @@ import (
 	"strings"
 	"time"
 
-	"opspect/models"
+	"opscog/models"
 )
 
 type HTTPConfig struct {

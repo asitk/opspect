@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 
 	"github.com/fsouza/go-dockerclient"
 	"github.com/stretchr/testify/require"

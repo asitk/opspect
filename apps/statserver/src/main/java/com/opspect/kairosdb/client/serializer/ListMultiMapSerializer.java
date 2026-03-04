@@ -1,4 +1,4 @@
-package com.opspect.kairosdb.client.serializer;
+package com.opscog.kairosdb.client.serializer;
 
 import com.google.common.collect.ListMultimap;
 import com.google.gson.JsonElement;

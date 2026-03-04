@@ -1,7 +1,7 @@
 package outputs
 
 import (
-	"opspect/models/client"
+	"opscog/models/client"
 )
 
 type Output interface {

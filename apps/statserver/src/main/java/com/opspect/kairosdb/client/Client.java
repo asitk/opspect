@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client;
+package com.opscog.kairosdb.client;
 
-import com.opspect.kairosdb.client.builder.MetricBuilder;
-import com.opspect.kairosdb.client.builder.QueryBuilder;
-import com.opspect.kairosdb.client.response.GetResponse;
-import com.opspect.kairosdb.client.response.QueryResponse;
-import com.opspect.kairosdb.client.response.Response;
+import com.opscog.kairosdb.client.builder.MetricBuilder;
+import com.opscog.kairosdb.client.builder.QueryBuilder;
+import com.opscog.kairosdb.client.response.GetResponse;
+import com.opscog.kairosdb.client.response.QueryResponse;
+import com.opscog.kairosdb.client.response.Response;
 import java.io.IOException;
 import java.net.URISyntaxException;
 

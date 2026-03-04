@@ -4,7 +4,7 @@ import (
 	"sync"
 
 	couchbase "github.com/couchbase/go-couchbase"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type Couchbase struct {

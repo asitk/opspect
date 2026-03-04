@@ -2,7 +2,7 @@
 package nwamdecoder
 
 import (
-	"opspect/util/discovery"
+	"opscog/util/discovery"
 	"time"
 )
 

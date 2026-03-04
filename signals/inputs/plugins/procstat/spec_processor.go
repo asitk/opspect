@@ -7,8 +7,8 @@ import (
 	"strconv"
 
 	"github.com/shirou/gopsutil/v4/process"
-	"opspect/signals/inputs/plugins"
-	"opspect/util/discovery"
+	"opscog/signals/inputs/plugins"
+	"opscog/util/discovery"
 )
 
 // SpecProcessor ...

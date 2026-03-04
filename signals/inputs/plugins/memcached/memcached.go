@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // Memcached is a memcached plugin

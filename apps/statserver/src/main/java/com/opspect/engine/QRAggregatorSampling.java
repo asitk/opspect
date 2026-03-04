@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.opspect.engine;
+package com.opscog.engine;
 
-import com.opspect.kairosdb.client.builder.TimeUnit;
+import com.opscog.kairosdb.client.builder.TimeUnit;
 
 /**
  * @author asitk

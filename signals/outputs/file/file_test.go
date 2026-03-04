@@ -4,7 +4,7 @@ package file
 // import (
 // 	"testing"
 //
-// 	"opspect/util/test"
+// 	"opscog/util/test"
 // 	"github.com/stretchr/testify/require"
 // )
 //

@@ -10,10 +10,10 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"opspect/config"
-	"opspect/signals"
-	_ "opspect/signals/inputs/plugins/all"
-	_ "opspect/signals/outputs/all"
+	"opscog/config"
+	"opscog/signals"
+	_ "opscog/signals/inputs/plugins/all"
+	_ "opscog/signals/outputs/all"
 )
 
 var fDebug = flag.Bool("debug", false,

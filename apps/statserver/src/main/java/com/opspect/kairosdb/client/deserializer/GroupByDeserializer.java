@@ -1,11 +1,11 @@
-package com.opspect.kairosdb.client.deserializer;
+package com.opscog.kairosdb.client.deserializer;
 
 import com.google.gson.*;
-import com.opspect.kairosdb.client.response.GroupResult;
-import com.opspect.kairosdb.client.response.grouping.DefaultGroupResult;
-import com.opspect.kairosdb.client.response.grouping.TagGroupResult;
-import com.opspect.kairosdb.client.response.grouping.TimeGroupResult;
-import com.opspect.kairosdb.client.response.grouping.ValueGroupResult;
+import com.opscog.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.response.grouping.DefaultGroupResult;
+import com.opscog.kairosdb.client.response.grouping.TagGroupResult;
+import com.opscog.kairosdb.client.response.grouping.TimeGroupResult;
+import com.opscog.kairosdb.client.response.grouping.ValueGroupResult;
 import java.lang.reflect.Type;
 
 /** Called by the JSON parser to deserialize groub-by. */

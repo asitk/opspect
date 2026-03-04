@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"opspect/signals"
+	"opscog/signals"
 )
 
 var localhost = "localhost"

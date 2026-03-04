@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 
 	"github.com/stretchr/testify/require"
 )

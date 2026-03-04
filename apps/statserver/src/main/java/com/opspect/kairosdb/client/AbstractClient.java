@@ -13,15 +13,15 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client;
+package com.opscog.kairosdb.client;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
 import com.google.gson.stream.JsonReader;
-import com.opspect.kairosdb.client.builder.MetricBuilder;
-import com.opspect.kairosdb.client.builder.QueryBuilder;
-import com.opspect.kairosdb.client.response.*;
+import com.opscog.kairosdb.client.builder.MetricBuilder;
+import com.opscog.kairosdb.client.builder.QueryBuilder;
+import com.opscog.kairosdb.client.response.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

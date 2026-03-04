@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 
 	"net/http"
 	"net/http/httptest"

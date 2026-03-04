@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/fsouza/go-dockerclient"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type Docker struct {

@@ -1,4 +1,4 @@
-package com.opspect.engine;
+package com.opscog.engine;
 
 import java.io.*;
 import java.nio.BufferOverflowException;

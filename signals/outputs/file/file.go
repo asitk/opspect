@@ -5,8 +5,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"opspect/models/client"
-	"opspect/signals/outputs"
+	"opscog/models/client"
+	"opscog/signals/outputs"
 )
 
 type File struct {

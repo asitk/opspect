@@ -1,4 +1,4 @@
-module opspect
+module opscog
 
 go 1.25.5
 

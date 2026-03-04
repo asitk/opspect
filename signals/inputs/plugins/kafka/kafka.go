@@ -3,7 +3,7 @@ package kafka
 import (
 	"fmt"
 	"github.com/IBM/sarama"
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 	"time"
 )
 

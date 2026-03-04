@@ -13,12 +13,12 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.response;
+package com.opscog.kairosdb.client.response;
 
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
 import com.google.gson.JsonSyntaxException;
-import com.opspect.kairosdb.client.JsonMapper;
+import com.opscog.kairosdb.client.JsonMapper;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

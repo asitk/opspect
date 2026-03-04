@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"opspect/signals/inputs/plugins"
-	"opspect/signals/inputs/plugins/exec"
-	"opspect/signals/inputs/plugins/memcached"
-	"opspect/signals/inputs/plugins/procstat"
+	"opscog/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins/exec"
+	"opscog/signals/inputs/plugins/memcached"
+	"opscog/signals/inputs/plugins/procstat"
 )
 
 /////////////////////////////////////////////////////////////////////

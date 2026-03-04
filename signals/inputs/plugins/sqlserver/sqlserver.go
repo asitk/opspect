@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 
 	// go-mssqldb initialization
 	_ "github.com/zensqlmonitor/go-mssqldb"

@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
 import java.util.Calendar;
 import java.util.TimeZone;

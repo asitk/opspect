@@ -1,10 +1,10 @@
-package com.opspect.kairosdb.client.serializer;
+package com.opscog.kairosdb.client.serializer;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
-import com.opspect.kairosdb.client.builder.QueryMetric;
+import com.opscog.kairosdb.client.builder.QueryMetric;
 import java.lang.reflect.Type;
 
 public class OrderSerializer implements JsonSerializer<QueryMetric.Order> {

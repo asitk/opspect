@@ -13,11 +13,11 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.response.grouping;
+package com.opscog.kairosdb.client.response.grouping;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.opspect.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.response.GroupResult;
 import java.util.List;
 import java.util.Map;
 

@@ -1,11 +1,11 @@
-package com.opspect.kairosdb.client;
+package com.opscog.kairosdb.client;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.opspect.kairosdb.client.deserializer.GroupByDeserializer;
-import com.opspect.kairosdb.client.deserializer.ResultsDeserializer;
-import com.opspect.kairosdb.client.response.GroupResult;
-import com.opspect.kairosdb.client.response.Results;
+import com.opscog.kairosdb.client.deserializer.GroupByDeserializer;
+import com.opscog.kairosdb.client.deserializer.ResultsDeserializer;
+import com.opscog.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.response.Results;
 import java.io.Reader;
 import java.lang.reflect.Type;
 

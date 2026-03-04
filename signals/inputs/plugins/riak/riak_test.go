@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 )
 
 func TestRiak(t *testing.T) {

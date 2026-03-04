@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
-	"opspect/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/decoders"
+	"opscog/signals/inputs/plugins/nwgraph/nwmon/processnetworkdata/utils"
 
-	"opspect/util/discovery"
+	"opscog/util/discovery"
 )
 
 var hmap map[string]ioState

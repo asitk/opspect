@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.response;
+package com.opscog.kairosdb.client.response;
 
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.builder.DataPoint;
+import com.opscog.kairosdb.client.builder.DataPoint;
 import java.util.List;
 import java.util.Map;
 

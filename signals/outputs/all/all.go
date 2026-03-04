@@ -1,6 +1,6 @@
 package all
 
 import (
-	_ "opspect/signals/outputs/file"
-	_ "opspect/signals/outputs/kafka"
+	_ "opscog/signals/outputs/file"
+	_ "opscog/signals/outputs/kafka"
 )

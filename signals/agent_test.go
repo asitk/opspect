@@ -6,12 +6,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"opspect/config"
+	"opscog/config"
 
 	// needing to load the plugins
-	_ "opspect/signals/inputs/plugins/all"
+	_ "opscog/signals/inputs/plugins/all"
 	// needing to load the outputs
-	_ "opspect/signals/outputs/all"
+	_ "opscog/signals/outputs/all"
 )
 
 func TestAgent_LoadPlugin(t *testing.T) {

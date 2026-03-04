@@ -13,9 +13,9 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
 /**
  * An aggregator manipulates data points. For example, a sum aggregator would add data points

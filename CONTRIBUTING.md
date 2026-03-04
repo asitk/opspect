@@ -1,6 +1,6 @@
-# Contributing to Opspect
+# Contributing to Opscog
 
-Thank you for your interest in contributing to Opspect.
+Thank you for your interest in contributing to Opscog.
 
 ## How to Contribute
 
@@ -49,18 +49,18 @@ Or use the DCO GitHub App to automatically check commits on pull requests.
 
 - Clone the repo:
   ```sh
-  git clone https://github.com/<your-fork>/opspect.git
-  cd opspect
+  git clone https://github.com/<your-fork>/opscog.git
+  cd opscog
   ```
 
 - Build the project:
   ```sh
-  go build -o opspect main.go
+  go build -o opscog main.go
   ```
 
 - Run the application:
   ```sh
-  ./opspect -config <config-file>
+  ./opscog -config <config-file>
   ```
 
 ## Coding Standards

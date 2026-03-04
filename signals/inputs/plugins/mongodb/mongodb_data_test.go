@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
-	"opspect/signals/testutil"
+	"opscog/signals/testutil"
 )
 
 var tags = make(map[string]string)

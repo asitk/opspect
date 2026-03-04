@@ -1,4 +1,4 @@
-package com.opspect.simulator;
+package com.opscog.simulator;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

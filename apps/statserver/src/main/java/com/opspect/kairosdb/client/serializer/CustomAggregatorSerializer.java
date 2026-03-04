@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.serializer;
+package com.opscog.kairosdb.client.serializer;
 
 import com.google.gson.*;
-import com.opspect.kairosdb.client.builder.aggregator.CustomAggregator;
+import com.opscog.kairosdb.client.builder.aggregator.CustomAggregator;
 import java.lang.reflect.Type;
 
 /** Used by the JSON parser to serialize a custom aggregator. */

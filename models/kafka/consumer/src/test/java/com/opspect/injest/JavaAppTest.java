@@ -1,4 +1,4 @@
-package com.opspect.injest;
+package com.opscog.injest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

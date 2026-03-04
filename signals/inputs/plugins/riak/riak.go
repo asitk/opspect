@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 // Type Riak gathers statistics from one or more Riak instances

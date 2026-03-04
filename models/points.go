@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"opspect/util/escape"
+	"opscog/util/escape"
 )
 
 var (

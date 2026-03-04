@@ -5,7 +5,7 @@ import (
 	"net"
 	"strings"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type NetIOStats struct {

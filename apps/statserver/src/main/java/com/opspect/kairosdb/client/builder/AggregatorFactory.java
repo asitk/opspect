@@ -13,16 +13,16 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder;
+package com.opscog.kairosdb.client.builder;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
-import com.opspect.kairosdb.client.builder.aggregator.CustomAggregator;
-import com.opspect.kairosdb.client.builder.aggregator.PercentileAggregator;
-import com.opspect.kairosdb.client.builder.aggregator.RateAggregator;
-import com.opspect.kairosdb.client.builder.aggregator.SamplingAggregator;
+import com.opscog.kairosdb.client.builder.aggregator.CustomAggregator;
+import com.opscog.kairosdb.client.builder.aggregator.PercentileAggregator;
+import com.opscog.kairosdb.client.builder.aggregator.RateAggregator;
+import com.opscog.kairosdb.client.builder.aggregator.SamplingAggregator;
 
 public class AggregatorFactory {
   public enum Trim {

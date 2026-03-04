@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"syscall"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type NetStats struct {

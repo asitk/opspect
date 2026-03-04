@@ -1,8 +1,8 @@
-package com.opspect.kairosdb.client.response.grouping;
+package com.opscog.kairosdb.client.response.grouping;
 
-import static com.opspect.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
+import static com.opscog.kairosdb.client.util.Preconditions.checkNotNullOrEmpty;
 
-import com.opspect.kairosdb.client.response.GroupResult;
+import com.opscog.kairosdb.client.response.GroupResult;
 
 /** Group that represents natural grouping based on the type of the data. */
 public class DefaultGroupResult extends GroupResult {

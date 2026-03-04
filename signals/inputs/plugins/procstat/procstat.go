@@ -1,8 +1,8 @@
 package procstat
 
 import (
-	"opspect/signals/inputs/plugins"
-	"opspect/util/discovery"
+	"opscog/signals/inputs/plugins"
+	"opscog/util/discovery"
 )
 
 type Specification struct {

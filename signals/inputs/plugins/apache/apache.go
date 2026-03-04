@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"opspect/signals/inputs/plugins"
+	"opscog/signals/inputs/plugins"
 )
 
 type Apache struct {

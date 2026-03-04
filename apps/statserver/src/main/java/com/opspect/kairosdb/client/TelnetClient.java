@@ -1,6 +1,6 @@
-package com.opspect.kairosdb.client;
+package com.opscog.kairosdb.client;
 
-import com.opspect.kairosdb.client.builder.*;
+import com.opscog.kairosdb.client.builder.*;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;

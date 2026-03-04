@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.response.grouping;
+package com.opscog.kairosdb.client.response.grouping;
 
 import com.google.gson.annotations.SerializedName;
-import com.opspect.kairosdb.client.response.Group;
+import com.opscog.kairosdb.client.response.Group;
 
 /** How the results were grouped. This indicates the group number. */
 public class GroupingNumber implements Group {

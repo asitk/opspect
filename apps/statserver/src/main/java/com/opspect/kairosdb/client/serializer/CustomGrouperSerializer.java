@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.serializer;
+package com.opscog.kairosdb.client.serializer;
 
 import com.google.gson.*;
-import com.opspect.kairosdb.client.builder.grouper.CustomGrouper;
+import com.opscog.kairosdb.client.builder.grouper.CustomGrouper;
 import java.lang.reflect.Type;
 
 public class CustomGrouperSerializer implements JsonSerializer<CustomGrouper> {

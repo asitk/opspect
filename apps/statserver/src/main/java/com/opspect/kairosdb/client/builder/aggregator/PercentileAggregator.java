@@ -13,11 +13,11 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.opspect.kairosdb.client.builder.aggregator;
+package com.opscog.kairosdb.client.builder.aggregator;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.opspect.kairosdb.client.builder.TimeUnit;
+import com.opscog.kairosdb.client.builder.TimeUnit;
 
 public class PercentileAggregator extends SamplingAggregator {
   private double percentile;
