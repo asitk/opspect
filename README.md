@@ -1,4 +1,4 @@
-# 🌀 OPSCog
+# 🌀 Opscog
 
 Orchestration for Cloud Apps: Modern application architectures are complex
 with many interconnected components. User requests and underlying business
@@ -35,9 +35,8 @@ hooks and then leverage ML/AI to prevent downtime and take custom actions.
 ## 🏗️ Project Structure
 
 ```
-opscog/
+Opscog/
 ├── apps/                       # Application components
-│   ├── demo-rest-jersey-spring/
 │   ├── simulator/
 │   └── statserver/
 ├── signals/                    # Core signal processing
@@ -54,8 +53,11 @@ opscog/
 ├── util/                       # Utility packages (discovery, escape, test)
 ├── deploy/                     # Deployment scripts
 ├── docs/                       # Documentation
+├── logstash/                   # Logstash configuration
 ├── main.go                     # Entry point
-└── main                        # Compiled binary
+├── Makefile                    # Build automation
+├── go.mod                      # Go module dependencies
+└── go.sum                      # Go module checksums
 ```
 
 ## 🔧 Work in Progress
