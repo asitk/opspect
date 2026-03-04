@@ -6,8 +6,7 @@ workflows have multiple touchpoints across the app topology. It is critical
 to be able to view performance of the system as a whole and react to
 business flow disruption in realtime. Opspect takes a new approach towards
 instrumentation of systems and flows using AI. Opspect allows you to setup
-custom hooks for and then leverage ML/AI to prevent downtime and take custom
-actions.
+hooks and then leverage ML/AI to prevent downtime and take custom actions.
 
 ## 🚀 Key Characteristics
 
