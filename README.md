@@ -1,45 +1,37 @@
 # 🔭 Opspect
 
-Deep Inspection System for Cloud Apps
+Orchestration for Cloud Apps: Modern application architectures are complex
+with many interconnected systems. User requests and the underlying business
+workflows have multiple touchpoints across the ecosystem. It is critical to
+be able to view performance of the system and react to business flow
+disruption due to anomalies in realtime. Opspect takes a new approach to
+instrument systems and application flows using AI. Opspect allows you to
+setup custom hooks for flows and then leverage ML/AI to prevent downtime and
+take custom actions.
 
-Application architectures are growing in complexity. Even basic apps have many interconnected micro-services. They use a wide variety of closed and open software stacks with multiple points of failure. Interconnections results in ripple effects through the application topology based on external fluctuations. Instances and services frequently come up and go down dynamically based on load. Data is flowing in and out of the application to the internet and intra node interactions also keep changing
+## 🚀 Key Characteristics
 
-This trend is expected to grow in the future. This has made it hard to track health, prevent downtime and debug issues using current tools and has business performance and security implications as well. Nuvidata builds specialized products to address these issues
-
-Most products in the monitoring space focus on instance specific screens. They are not intelligent, context aware and lack debug capabilities. Also human beings are not able to perform correlations manually beyond a few screens/variables. Usually these tools are simply the ability to create visualizations from data provided by customers themselves and do not have the required depth for automated causality analysis
-
-Opspect brings Intelligent Root Cause Isolation that is built on Application Topology Awareness. The product combines service specific metrics and context along with big data and machine learning. Isolates anomalies using proprietary algorithms, suppresses noise, predicts downtime/failure events and reveals important attributes about the application stack
-
-## 🚀  Key Characterics
-
-- No need to setup specific montoring screens or alerts
-- Anomaly Detection & Correlation (App Server - MySQL)
-- UI: App Topology Health
-- UI: Time series graph and heatmap, stats charts
-- Monitor the health of a service, Flag potential issues/downtime
-- Root Cause Analysis for specific service clusters
+- No need to setup specific screens or alerts for observability
+- Anomaly Detection & Correlation
+- Monitor service health, Flag potential issues/downtime
 - Quick Deployment, No code level instrumentation required
+- Agentic framework for custom actions (WIP)
 
 ## ✨ Features
 
 - 🔍 **Adaptive Error Detection and Root Cause Analysis**
 - 📈 **Trends**
 - 📊 **Predictive Analytics**
-  - Mean time to failure 
+  - Mean time to failure
   - Performance bottlenecks based on Seasonal Variations
-  - Errors by Severity 
-- ⚡ **Performance Analysis**
-  - Web Server (Apache/NgInx)
-  - App Server (Java and .Net)
+  - Errors by Severity
+- ⚡ **Systemic Performance Analysis**
+  - Web Servers (Apache/NgInx)
+  - App Servers (Java and .Net)
     - Top time taking methods
     - Memory leaks and GC health
-  - Database (SQL)
-    - Top Slow Queries 
-- 💰 **Capacity Planning and Cost Projection**  
-- ☁️ **Cloud Debugger**
-  - Sets capture points based on scenarios
-  - Gets thread, method and stack level info from application topology using a JIT engine
-  - Search and debug results using intelligent tooling
+  - Databases (SQL)
+    - Top Slow Queries
 
 ## 🏗️ Project Structure
 
@@ -75,4 +67,5 @@ opspect/
 
 ## 📜 License
 
-**GNU Affero General Public License v3.0 (AGPL-3.0)** - All source code and components
+**GNU Affero General Public License v3.0 (AGPL-3.0)** - All source code and
+components
