@@ -1,13 +1,13 @@
 # 🔭 Opspect
 
 Orchestration for Cloud Apps: Modern application architectures are complex
-with many interconnected systems. User requests and the underlying business
-workflows have multiple touchpoints across the ecosystem. It is critical to
-be able to view performance of the system and react to business flow
-disruption due to anomalies in realtime. Opspect takes a new approach to
-instrument systems and application flows using AI. Opspect allows you to
-setup custom hooks for flows and then leverage ML/AI to prevent downtime and
-take custom actions.
+with many interconnected components. User requests and underlying business
+workflows have multiple touchpoints across the app topology. It is critical
+to be able to view performance of the system as a whole and react to
+business flow disruption in realtime. Opspect takes a new approach towards
+instrumentation of systems and flows using AI. Opspect allows you to setup
+custom hooks for and then leverage ML/AI to prevent downtime and take custom
+actions.
 
 ## 🚀 Key Characteristics
 
