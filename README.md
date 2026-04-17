@@ -6,7 +6,7 @@ workflows have multiple touchpoints across the app topology. It is critical
 to be able to view performance of the system as a whole and react to
 business flow disruption in realtime. Opscog takes a different approach in
 instrumenting systems & flows. It leverages ML/AI to prevent downtime and 
-to take custom actions.
+to take custom actions
 
 ## 🚀 Key Characteristics
 
